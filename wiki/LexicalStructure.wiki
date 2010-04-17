@@ -16,7 +16,16 @@ input-elements:
     input-element<br/>
     input-elements input-element
 input-element:
-    whitespace</br>
-    comment</br>
+    whitespace<br/>
+    comment<br/>
     token
+</em></blockquote>
+
+== Whitespaces ==
+<blockquote><em>
+whitespace:
+    <b>Space (U+0020)<br/>
+    Horizontal tab (U+0009)<br/>
+    Vertical tab (U+000B)<br/>
+    Form feed (U+000C)</b> 
 </em></blockquote>
