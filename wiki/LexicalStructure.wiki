@@ -1,9 +1,7 @@
 #summary Describes the lexical structure of the Stab programming language.
-
 <wiki:toc max_depth="3"/>
 
 = Lexical analysis =
-
 The process of scanning a source file is described by the grammar productions:
 <blockquote><em>
 input:
