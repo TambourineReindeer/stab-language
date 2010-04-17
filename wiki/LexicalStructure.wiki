@@ -1,0 +1,22 @@
+#summary Describes the lexical structure of the Stab programming language.
+
+= Lexical analysis =
+
+The process of scanning a source file is described by the grammar productions:
+<blockquote><em>
+input:
+    input-section <sub>opt</sub>
+input-section:
+    input-section-part<br/>
+    input-section input-section-part
+input-section-part:
+    input-elements <sub>opt</sub><br/>
+    preprocessor-directive
+input-elements:
+    input-element<br/>
+    input-elements input-element
+input-element:
+    whitespace</br>
+    comment</br>
+    token
+</em></blockquote>
