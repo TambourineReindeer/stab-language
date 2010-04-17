@@ -30,7 +30,6 @@ new-line-character:
     Line separator (U+2028)<br/>
     Paragraph separator (U+2029)</b> 
 </em></blockquote>
-
 <blockquote><em>
 new-line:
     <b>Carriage return (U+000D)<br/>
@@ -51,4 +50,16 @@ whitespace:
 </em></blockquote>
 
 == Comments ==
+The language supports the traditional C++ comments:
+<blockquote><em>
 comment:
+    single-line-comment<br/>
+    delimited-comment
+single-line-comment:
+    // input-characters <sub>opt</sub>
+input-characters:
+    input-character<br/>
+    input-characters input-character
+input-character:
+    <b>Any unicode character except a</b> new-line-character
+</em></blockquote>
