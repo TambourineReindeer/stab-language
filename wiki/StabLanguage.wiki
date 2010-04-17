@@ -1,4 +1,4 @@
 #summary Table of content.
 
   # [LexicalStructure Lexical structure]
-  # [TypeSystem Type system]
+  # [PackageDeclaration Package declaration]
