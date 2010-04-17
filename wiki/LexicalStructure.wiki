@@ -22,6 +22,7 @@ input-element:
     comment<br/>
     token
 </em></blockquote>
+The _preprocessor-directive_ production is detailed in this page: PreprocessorDirectives.
 
 = Newlines =
 <blockquote><em>
