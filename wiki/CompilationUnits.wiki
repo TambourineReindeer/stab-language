@@ -1,0 +1,8 @@
+#summary The organisation of a source file.
+
+= Compilation units =
+A compilation unit represents the structure of a source file and is described by the root production of the grammar:
+<blockquote><em>
+compilation-unit:
+    using-directives<sub>opt</sub> package-member-declarations<sub>opt</sub>
+</em></blockquote>
