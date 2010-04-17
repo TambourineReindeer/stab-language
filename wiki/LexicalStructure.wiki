@@ -21,6 +21,26 @@ input-element:
     token
 </em></blockquote>
 
+== Newlines ==
+<blockquote><em>
+new-line-character:
+    <b>Carriage return (U+000D)<br/>
+    Line feed (U+000A)<br/>
+    Next line (U+0085)<br/>
+    Line separator (U+2028)<br/>
+    Paragraph separator (U+2029)</b> 
+</em></blockquote>
+
+<blockquote><em>
+new-line:
+    <b>Carriage return (U+000D)<br/>
+    Line feed (U+000A)<br/>
+    Carriage return (U+000D)</b> immediately followed by <b>Line feed (U+000A)<br/>
+    Next line (U+0085)<br/>
+    Line separator (U+2028)<br/>
+    Paragraph separator (U+2029)</b> 
+</em></blockquote>
+
 == Whitespaces ==
 <blockquote><em>
 whitespace:
@@ -29,3 +49,6 @@ whitespace:
     Vertical tab (U+000B)<br/>
     Form feed (U+000C)</b> 
 </em></blockquote>
+
+== Comments ==
+comment:
