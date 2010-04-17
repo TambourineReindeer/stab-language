@@ -61,5 +61,8 @@ input-characters:
     input-character<br/>
     input-characters input-character
 input-character:
-    <b>Any unicode character except a</b> new-line-character
+    <b>Any Unicode character except a</b> new-line-character
+delimited-comment:
+    /`*` <b>Any Unicode characters except the sequence `*`/</b> `*`/
+
 </em></blockquote>
