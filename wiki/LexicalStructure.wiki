@@ -64,5 +64,42 @@ input-character:
     <b>Any Unicode character except a</b> new-line-character
 delimited-comment:
     /`*` <b>Any Unicode characters except the sequence `*`/</b> `*`/
+</em></blockquote>
 
+== Tokens ==
+<blockquote><em>
+token:
+    identifier<br/>
+    @identifier<br/>
+    @keyword<br/>
+    keyword<br/>
+    integer-literal<br/>
+    real-literal<br/>
+    character-literal<br/>
+    string-literal<br/>
+    operator<br/>
+    punctuator
+</em></blockquote>
+
+=== Unicode escape sequences ===
+Unicode escape sequences can be part of identifiers, strings and character.
+<blockquote><em>
+unicode-escape-sequence:
+    \u hex-digit hex-digit hex-digit hex-digit<br/>
+    \U hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit
+</em></blockquote>
+
+=== Identifiers ===
+The @ character can be added before an identifier or a keyword. The resulting token is an identifier without the @ character.
+It is useful to use keywords as identifiers when a library has been written in Java.
+<blockquote><em>
+identifier:
+    identifier-start identifier-parts <sub>opt</sub>
+identifier-start:
+    <b>Any character or</b> unicode-escape-sequence <b>where where java.lang.Character.isJavaIdentifierStart() is true</b>  
+identifier-parts:
+    identifier-part<br/>
+    identifier-parts identifier-part
+identifier-part:
+    <b>Any character or</b> unicode-escape-sequence <b>where java.lang.Character.isJavaIdentifierPart() is true</b>
 </em></blockquote>
