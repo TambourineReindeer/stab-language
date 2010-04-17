@@ -120,3 +120,25 @@ These identifiers are considered as keywords when used in some places in the cod
 || ascending || by || descending || equals || from || get || group ||
 || into || join || let || on || orderby || select || set ||
 || value || var || where || yield ||
+
+=== Integer literals ===
+Values of types {{{int}}} and {{{long}}} can be represented as literals:
+<blockquote><em>
+integer-literals:
+    decimal-digits long-type <sub>opt</sub><br/>
+    0x hex-digits long-type <sub>opt</sub><br/>
+    0X hex-digits long-type <sub>opt</sub><br/>
+decimal-digits:
+    decimal-digit<br/>
+    decimal-digits decimal-digit
+decimal-digit:
+    <b>One of</b> 0 1 2 3 4 5 6 7 8 9
+hex-digits:
+    hex-digit<br/>
+    hex-digits hex-digit
+hex-digit:
+    <b>One of</b> 0 1 2 3 4 5 6 7 8 9 A B C D E F a b c d e f
+long-type:
+    l <b>or</b> L
+</em></blockquote>
+The values without the optional 'L' suffix and outside of the range of {{{int}}} values are considered as {{{long}}} literals.
