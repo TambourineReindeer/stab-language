@@ -1,5 +1,7 @@
 #summary Describes the lexical structure of the Stab programming language.
 
+<wiki:toc max_depth="3"/>
+
 = Lexical analysis =
 
 The process of scanning a source file is described by the grammar productions:
@@ -77,8 +79,7 @@ token:
     real-literal<br/>
     character-literal<br/>
     string-literal<br/>
-    operator<br/>
-    punctuator
+    separator
 </em></blockquote>
 
 === Unicode escape sequences ===
@@ -221,3 +222,18 @@ var s2 = @"line 1
 line 2
 line 3";
 }}}
+
+=== Separators ===
+<tt>
+|| { || } || [ || ] || ( || ) || . || , || : || ; ||
+|| + || - || `*` || / || % || & || | || ^ || ! || ~ ||
+|| = || < || > || ? || ?? || :: || ++|| -- || &&  || | | ||
+|| == || != || <= || >= || += || -= || *= || /= || %= || &= ||
+|| |= || ^= || << || <<= || => ||
+</tt>
+
+To avoid ambiguities in generic parameter lists:
+  * >> is the composition of two >
+  * >>= is the composition of > and >=.
+  * >>> is the composition of three >
+  * >>>= is the composition of >, > and >=
