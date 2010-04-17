@@ -2,3 +2,4 @@
 
   # [LexicalStructure Lexical structure]
   # [CompilationUnits Structure of a source file]
+  # [ClassDeclarations Classes]
