@@ -1,8 +1,78 @@
 #summary The organisation of a source file.
+<wiki:toc max_depth="3"/>
 
 = Compilation units =
 A compilation unit represents the structure of a source file and is described by the root production of the grammar:
 <blockquote><em>
 compilation-unit:
     using-directives<sub>opt</sub> package-member-declarations<sub>opt</sub>
+package-member-declarations:
+    package-member-declaration<br/>
+    package-member-declarations package-member-declaration
+package-member-declaration:
+    package-declaration<br/>
+    class-declaration<br/>
+    interface-declaration<br/>
+    enum-declaration<br/>
+    delegate-declaration
+</em></blockquote>
+There is no restriction on the number of packages and types in a Stab source file.
+
+= Package declarations =
+A package declaration in Stab has a body delimited with { and }:
+<blockquote><em>
+package-declaration:
+    annotations<sub>opt</sub> <tt>package</tt> qualified-identifier { using-directives<sub>opt</sub> package-member-declarations<sub>opt</sub> } ;<sub>opt</sub>
+</em></blockquote>
+Package declarations can be nested:
+{{{
+package A {
+    package B {
+        // Package members
+    }
+}
+}}}
+is equivalent to:
+{{{
+package A.B {
+    // Package members
+}
+}}}
+= Using directives =
+Using directives are used to give access to the types declared in other packages without having to fully qualify their names.
+<blockquote><em>
+using-directives:
+    using-directive<br/>
+    using-directives using-directive
+using-directive:
+    using-alias-directive<br/>
+    using-package-directive
+</em></blockquote>
+The directives in a single block are not affected by the other {{{using}}} directives:
+{{{
+package A {
+    using java.lang;
+    using C = String; // error: String is unknown
+}
+}}}
+== Using alias directives ==
+Using alias directives redefine a package or type name locally.
+<blockquote><em>
+using-alias-directive:
+    <tt>using</tt> identifier = package-or-type-name ;
+</em></blockquote>
+Constructed generic types can be aliased:
+{{{
+using java.lang;
+using java.util;
+package A {
+    using StringList = ArrayList<String>;
+}
+}}}
+
+== Using package directives ==
+Using package directives gives access to all the public types of a package by their simple names.
+<blockquote><em>
+using-alias-directive:
+    <tt>using</tt> package-name ;
 </em></blockquote>
