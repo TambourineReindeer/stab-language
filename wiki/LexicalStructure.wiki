@@ -106,6 +106,7 @@ identifier-part:
 
 === Keywords ===
 The following tokens cannot be used as identifier except when prefixed with @:
+<tt>
 || abstract || as || boolean || break || byte || case || catch ||
 || char || class || continue || default || delegate || double || do ||
 || else || enum || false || final || finally || float || for ||
@@ -115,16 +116,19 @@ The following tokens cannot be used as identifier except when prefixed with @:
 || static || strictfp || super || switch || synchronized || this || throw ||
 || transient || true || try || typeof || using || virtual || void ||
 || volatile || where || while ||
+</tt>
 
 These identifiers are considered as keywords when used in some places in the code:
+<tt>
 || ascending || by || descending || equals || from || get || group ||
 || into || join || let || on || orderby || select || set ||
 || value || var || where || yield ||
+</tt>
 
 === Integer literals ===
-Values of types {{{int}}} and {{{long}}} can be represented as literals:
+Values of types {{{int}}} and {{{long}}} can be represented as integer literals:
 <blockquote><em>
-integer-literals:
+integer-literal:
     decimal-digits long-type <sub>opt</sub><br/>
     0x hex-digits long-type <sub>opt</sub><br/>
     0X hex-digits long-type <sub>opt</sub><br/>
@@ -142,3 +146,78 @@ long-type:
     l <b>or</b> L
 </em></blockquote>
 The values without the optional 'L' suffix and outside of the range of {{{int}}} values are considered as {{{long}}} literals.
+
+=== Real literals ===
+Values of types {{{float}}} and {{{double}}} can be represented as real literals:
+<blockquote><em>
+real-literal:
+    decimal-digits . decimal-digits exponent-part <sub>opt</sub> real-type <sub>opt</sub><br/>
+    . decimal-digits exponent-part <sub>opt</sub> real-type <sub>opt</sub><br/>
+    decimal-digits exponent-part real-type <sub>opt</sub><br/>
+    decimal-digits real-type
+exponent-part:
+    e +<sub>opt</sub> decimal-digits<br/>
+    e -<sub>opt</sub> decimal-digits<br/>
+    E +<sub>opt</sub> decimal-digits<br/>
+    E -<sub>opt</sub> decimal-digits
+real-type:
+    <b>One of</b> f F d D
+</em></blockquote>
+
+=== Character literals ===
+Values of type {{{char}}} can be represented as character literals:
+<blockquote><em>
+character-literal:
+    ' character '
+character:
+    <b>Any character except quote (U+0027), backslash (U+005C), and</b> new-line-character<br/>
+    simple-escape-sequence<br/>
+    hexadecimal-escape-sequence<br/>
+    unicode-escape-sequence
+simple-escape-sequence:
+    <b>One of</b> \' \" \\ \0 \a \b \f \n \r \t \v
+hexadecimal-escape-sequence:
+    \x hex-digit hex-digit <sub>opt</sub> hex-digit <sub>opt</sub> hex-digit <sub>opt</sub>
+</em></blockquote>
+The characters represented by simple escape sequences are:
+|| *Escape sequence* || *Unicode* ||
+|| \' || U+0027 ||
+|| \" || U+0022 ||
+|| \\ || U+005C ||
+|| \0 || U+0000 ||
+|| \a || U+0007 ||
+|| \b || U+0008 ||
+|| \f || U+000C ||
+|| \n || U+000A ||
+|| \r || U+000D ||
+|| \t || U+0009 ||
+|| \v || U+000B ||
+
+=== String literals ===
+Values of type {{{java.lang.String}}} can be represented as string literals:
+<blockquote><em>
+string-literal:
+    " string-literal-characters <sub>opt</sub> "<br/>
+    @" verbatim-string-characters <sub>opt</sub> "
+string-literal-characters:
+    string-literal-character<br/>
+    string-literal-characters string-literal-character
+string-literal-character:
+    <b>Any character except double quote (U+0022), backslash (U+005C), and</b> new-line-character<br/>
+    simple-escape-sequence<br/>
+    hexadecimal-escape-sequence<br/>
+    unicode-escape-sequence
+verbatim-string-characters:
+    verbatim-string-character<br/>
+    verbatim-string-characters verbatim-string-character
+verbatim-string-character:
+    <b>Any character except double quote (U+0022)</b><br/>
+    " "
+</em></blockquote>
+Verbatim string literals can be used to represent strings that would otherwise require a lot of escape sequences if represented using the traditional format:
+{{{
+var s1 = @"C:\tmp\f.txt";
+var s2 = @"line 1
+line 2
+line 3";
+}}}
