@@ -96,10 +96,27 @@ It is useful to use keywords as identifiers when a library has been written in J
 identifier:
     identifier-start identifier-parts <sub>opt</sub>
 identifier-start:
-    <b>Any character or</b> unicode-escape-sequence <b>where where java.lang.Character.isJavaIdentifierStart() is true</b>  
+    <b>Any character or</b> unicode-escape-sequence <b>where java.lang.Character.isJavaIdentifierStart() is true</b>  
 identifier-parts:
     identifier-part<br/>
     identifier-parts identifier-part
 identifier-part:
     <b>Any character or</b> unicode-escape-sequence <b>where java.lang.Character.isJavaIdentifierPart() is true</b>
 </em></blockquote>
+
+=== Keywords ===
+The following tokens cannot be used as identifier except when prefixed with @:
+|| abstract || as || boolean || break || byte || case || catch ||
+|| char || class || continue || default || delegate || double || do ||
+|| else || enum || false || final || finally || float || for ||
+|| foreach || goto || if || in || instanceof || int || interface ||
+|| long || package || native || new || null || override || params ||
+|| partial || private || protected || public || return || short || sizeof ||
+|| static || strictfp || super || switch || synchronized || this || throw ||
+|| transient || true || try || typeof || using || virtual || void ||
+|| volatile || where || while ||
+
+These identifiers are considered as keywords when used in some places in the code:
+|| ascending || by || descending || equals || from || get || group ||
+|| into || join || let || on || orderby || select || set ||
+|| value || var || where || yield ||
