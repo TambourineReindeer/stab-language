@@ -5,13 +5,13 @@
 The process of scanning a source file is described by the grammar productions:
 <blockquote><em>
 input:
-    input-section <sub>opt</sub>
+    input-section<sub>opt</sub>
 input-section:
     input-section-part<br/>
     input-section input-section-part
 input-section-part:
-    input-elements <sub>opt</sub><br/>
-    preprocessor-directive
+    input-elements<sub>opt</sub><br/>
+    pp-directive
 input-elements:
     input-element<br/>
     input-elements input-element
@@ -20,7 +20,6 @@ input-element:
     comment<br/>
     token
 </em></blockquote>
-The _preprocessor-directive_ production is detailed in this page: PreprocessorDirectives.
 
 = Newlines =
 <blockquote><em>
@@ -236,3 +235,6 @@ To avoid ambiguities in generic parameter lists:
   * >>= is the composition of > and >=.
   * >>> is the composition of three >
   * >>>= is the composition of >, > and >=
+
+= Pre-processing directives =
+The preprocessor support in Stab is directly borrowed from the mecanism described in the [http://msdn.microsoft.com/en-us/library/aa645596(v=VS.71).aspx C# specification].
