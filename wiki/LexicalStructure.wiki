@@ -23,7 +23,7 @@ input-element:
     token
 </em></blockquote>
 
-== Newlines ==
+= Newlines =
 <blockquote><em>
 new-line-character:
     <b>Carriage return (U+000D)<br/>
@@ -42,7 +42,7 @@ new-line:
     Paragraph separator (U+2029)</b> 
 </em></blockquote>
 
-== Whitespaces ==
+= Whitespaces =
 <blockquote><em>
 whitespace:
     <b>Space (U+0020)<br/>
@@ -51,7 +51,7 @@ whitespace:
     Form feed (U+000C)</b> 
 </em></blockquote>
 
-== Comments ==
+= Comments =
 The language supports the traditional C++ comments:
 <blockquote><em>
 comment:
@@ -68,7 +68,7 @@ delimited-comment:
     /`*` <b>Any Unicode characters except the sequence `*`/</b> `*`/
 </em></blockquote>
 
-== Tokens ==
+= Tokens =
 <blockquote><em>
 token:
     identifier<br/>
@@ -82,7 +82,7 @@ token:
     separator
 </em></blockquote>
 
-=== Unicode escape sequences ===
+== Unicode escape sequences ==
 Unicode escape sequences can be part of identifiers, strings and character.
 <blockquote><em>
 unicode-escape-sequence:
@@ -90,7 +90,7 @@ unicode-escape-sequence:
     \U hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit
 </em></blockquote>
 
-=== Identifiers ===
+== Identifiers ==
 The @ character can be added before an identifier or a keyword. The resulting token is an identifier without the @ character.
 It is useful to use keywords as identifiers when a library has been written in Java.
 <blockquote><em>
@@ -105,7 +105,7 @@ identifier-part:
     <b>Any character or</b> unicode-escape-sequence <b>where java.lang.Character.isJavaIdentifierPart() is true</b>
 </em></blockquote>
 
-=== Keywords ===
+== Keywords ==
 The following tokens cannot be used as identifier except when prefixed with @:
 <tt>
 || abstract || as || boolean || break || byte || case || catch ||
@@ -126,7 +126,7 @@ These identifiers are considered as keywords when used in some places in the cod
 || value || var || where || yield ||
 </tt>
 
-=== Integer literals ===
+== Integer literals ==
 Values of types {{{int}}} and {{{long}}} can be represented as integer literals:
 <blockquote><em>
 integer-literal:
@@ -148,7 +148,7 @@ long-type:
 </em></blockquote>
 The values without the optional 'L' suffix and outside of the range of {{{int}}} values are considered as {{{long}}} literals.
 
-=== Real literals ===
+== Real literals ==
 Values of types {{{float}}} and {{{double}}} can be represented as real literals:
 <blockquote><em>
 real-literal:
@@ -165,7 +165,7 @@ real-type:
     <b>One of</b> f F d D
 </em></blockquote>
 
-=== Character literals ===
+== Character literals ==
 Values of type {{{char}}} can be represented as character literals:
 <blockquote><em>
 character-literal:
@@ -194,7 +194,7 @@ The characters represented by simple escape sequences are:
 || \t || U+0009 ||
 || \v || U+000B ||
 
-=== String literals ===
+== String literals ==
 Values of type {{{java.lang.String}}} can be represented as string literals:
 <blockquote><em>
 string-literal:
@@ -223,7 +223,7 @@ line 2
 line 3";
 }}}
 
-=== Separators ===
+== Separators ==
 <tt>
 || { || } || [ || ] || ( || ) || . || , || : || ; ||
 || + || - || `*` || / || % || & || | || ^ || ! || ~ ||
