@@ -238,3 +238,5 @@ To avoid ambiguities in generic parameter lists:
 
 = Pre-processing directives =
 The preprocessor support in Stab is directly borrowed from the mecanism described in the [http://msdn.microsoft.com/en-us/library/aa645596(v=VS.71).aspx C# specification].
+
+Symbols can be defined externally using the {{{-d}}} option of the compiler. For example the option to define S1 and S2 symbols is {{{-d:S1;S2}}}.
