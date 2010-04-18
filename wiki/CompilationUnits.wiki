@@ -1,4 +1,4 @@
-#summary The organisation of a source file.
+#summary The organization of a source file.
 <wiki:toc max_depth="3"/>
 
 = Compilation units =
