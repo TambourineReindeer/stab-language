@@ -5,7 +5,7 @@
 The syntax to declare an enum is specified by:
 <blockquote><em>
 enum-declaration:
-    annotations<sub>opt</sub> enum-modifiers<sub>opt</sub> <tt>enum</tt> identifier interface-base<sub>opt</sub> enum-body ;<sub>opt</sub>
+    annotations<sub>opt</sub> enum-modifiers<sub>opt</sub> <tt>enum</tt> identifier type-base<sub>opt</sub> enum-body ;<sub>opt</sub>
 </em></blockquote>
 An enum is a special kind of class.
 
