@@ -61,11 +61,11 @@ is equivalent to the Java program:
 {{{
 public class C {
     private int prop;
-    @stab.lang.PropertyGet()
+    @stab.lang.PropertyGet
     public final int getProp() {
         return prop;
     }
-    @stab.lang.PropertySet()
+    @stab.lang.PropertySet
     protected final void setProp(int value) {
         prop = value;
     }
