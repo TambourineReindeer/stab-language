@@ -1,0 +1,41 @@
+#summary Declaration of constructors.
+
+= Constructor declaration =
+The syntax to declare a constructor is specified by:
+<em><pre>
+constructor-declaration:
+    annotations,,opt,, constructor-modifiers,,opt,, identifier type-parameter-list,,opt,, *(* formal-parameter-list,,opt,, *)* 
+            constructor-initializer,,opt,, type-parameter-constraints-clauses,,opt,, constructor-body
+
+constructor-body:
+    block
+    *;*
+</pre></em>
+
+= Constructor modifiers =
+The constructor modifiers in Stab have the same usage and semantics that the constructor modifiers in Java.
+<em><pre>
+constructor-modifiers:
+    constructor-modifier
+    constructor-modifiers constructor-modifier
+    
+constructor-modifier:
+    *One of public protected private synchronized native strictfp*
+</pre></em>
+= Constructor declarator =
+The constructor declarator is used to call a base constructor or a constructor of this class.
+<pre>_
+constructor-declarator:
+    *: super (* argument-list,,opt,, *)* 
+    *: this (* argument-list,,opt,, *)* 
+_</pre>
+For example:
+{{{
+class A {
+    A(int i) {}
+}
+class B : A {
+    B(int i) : super(i) {}
+    B() : this(0) {}
+}
+}}}
