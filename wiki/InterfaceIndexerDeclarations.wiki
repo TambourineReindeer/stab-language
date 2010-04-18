@@ -1,0 +1,10 @@
+#summary Declaration of interface indexers.
+<wiki:toc max_depth="3"/>
+
+= Interface indexer declaration =
+The syntax to declare a indexer in an interface is specified by:
+<blockquote><em>
+interface-property-declaration:
+    annotations<sub>opt</sub> type <tt>this</tt> `[` formal-parameter-list `]` { interface-accessors }
+</em></blockquote>
+The specified accessors are implicitly {{{public}}} and {{{abstract}}}.
