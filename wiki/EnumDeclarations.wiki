@@ -24,6 +24,11 @@ The enum body is the place where the members of an enum are declared.
 <blockquote><em>
 enum-body:
     { enum-constant-declarations<sub>opt</sub> ;<sub>opt</sub> class-member-declarations<sub>opt</sub> }
+</em></blockquote>
+
+== Enum constant declarations ==
+An enum constant is an instance of the enum type.
+<blockquote><em>
 enum-constant-declarations:
     enum-constant-declaration<br/>
     enum-constant-declarations , enum-constant-declaration
