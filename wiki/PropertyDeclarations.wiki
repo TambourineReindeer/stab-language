@@ -12,7 +12,8 @@ _</pre>
 property-modifiers:
     property-modifier
     property-modifiers property-modifier
-    
+_</pre>
+<pre>_
 constructor-modifier:
     *One of public protected private synchronized native strictfp final abstract virtual override static*
 _</pre>
