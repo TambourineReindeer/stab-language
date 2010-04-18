@@ -3,9 +3,9 @@
 
 = Interface method declaration =
 The syntax to declare a method in an interface is specified by:
-<blockquote><em>
+<em><pre>
 interface-method-declaration:
-    annotations<sub>opt</sub> return-type identifier type-parameter-list<sub>opt</sub> ( formal-parameter-list<sub>opt</sub> )
-        type-parameter-constraints-clauses<sub>opt</sub> ;
-</em></blockquote>
+    annotations,,opt,, return-type identifier type-parameter-list,,opt,, *(* formal-parameter-list,,opt,, *)* 
+            type-parameter-constraints-clauses,,opt,, *;*
+</pre></em>
 The method is implicitly {{{public}}} and {{{abstract}}}.
