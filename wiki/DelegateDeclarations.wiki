@@ -1,20 +1,21 @@
 #summary Declaration of delegates.
-<wiki:toc max_depth="3"/>
 
 = Delegate declaration =
 The syntax to declare a delegate is specified by:
-<blockquote><em>
+<em><pre>
 delegate-declaration:
-    annotations<sub>opt</sub> delegate-modifiers<sub>opt</sub> <tt>delegate</tt> return-type identifier type-parameter-list<sub>opt</sub> ( formal-parameter-list<sub>opt</sub> ) type-parameter-constraints-clauses<sub>opt</sub> ;
-</em></blockquote>
+    annotations,,opt,, delegate-modifiers,,opt,, *delegate* return-type identifier type-parameter-list,,opt,, *(* formal-parameter-list,,opt,, *)* 
+            type-parameter-constraints-clauses,,opt,, ;
+</pre></em>
 A delegate type is an abstract class derived from {{{stab.lang.Delegate}}}. It defines an abstract method named {{{invoke}}} with the same signature as the delegate.
 
 = Delegate modifiers =
-The delegate modifiers control the access to the type.
-<blockquote><em>
+The delegate modifiers control the access to the type. Only nested delegates can be {{{protected}}} or {{{private}}}.
+<em><pre>
 delegate-modifiers:
-    delegate-modifier<br/>
+    delegate-modifier
     delegate-modifiers delegate-modifier
+    
 delegate-modifier:
-    <b>One of</b> <tt>public protected private</tt>
-</em></blockquote>
+    *One of public protected private*
+</pre></em>
