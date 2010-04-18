@@ -3,35 +3,37 @@
 
 = Enum declaration =
 The syntax to declare an enum is specified by:
-<blockquote><em>
+<em><pre>
 enum-declaration:
-    annotations<sub>opt</sub> enum-modifiers<sub>opt</sub> <tt>enum</tt> identifier type-base<sub>opt</sub> enum-body ;<sub>opt</sub>
-</em></blockquote>
-An enum is a special kind of class.
+    annotations,,opt,, enum-modifiers,,opt,, *enum* identifier type-base,,opt,, enum-body *;*,,opt,,
+</pre></em>
+An enum is a special kind of class derived from {{{java.lang.Enum}}} and providing a special syntax to declare static fields of that type.
 
 = Enum modifiers =
 The enum modifiers in Stab have the same usage and semantic as the enum modifiers in Java.
-<blockquote><em>
+<em><pre>
 enum-modifiers:
-    enum-modifier<br/>
+    enum-modifier
     enum-modifiers enum-modifier
+    
 enum-modifier:
-    <b>One of</b> <tt>public protected private</tt>
-</em></blockquote>
+    *One of public protected private* 
+</pre></em>
 
 = Enum body =
 The enum body is the place where the members of an enum are declared.
-<blockquote><em>
+<em><pre>
 enum-body:
-    { enum-constant-declarations<sub>opt</sub> ;<sub>opt</sub> class-member-declarations<sub>opt</sub> }
-</em></blockquote>
+    *{* enum-constant-declarations,,opt,, *;*,,opt,, class-member-declarations,,opt,, *}*
+</pre></em>
 
 == Enum constant declarations ==
-An enum constant is an instance of the enum type.
-<blockquote><em>
+An enum constant is a static field holding an instance of the enum type.
+<em><pre>
 enum-constant-declarations:
-    enum-constant-declaration<br/>
-    enum-constant-declarations , enum-constant-declaration
+    enum-constant-declaration
+    enum-constant-declarations *,* enum-constant-declaration
+    
 enum-constant-declaration:
-    annotations<sub>opt</sub> identifier argument-list<sub>opt</sub> class-body<sub>opt</sub>
-</em></blockquote>
+    annotations,,opt,, identifier argument-list,,opt,, class-body,,opt,,
+</pre></em>
