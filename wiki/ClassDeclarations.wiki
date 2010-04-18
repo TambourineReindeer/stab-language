@@ -36,7 +36,7 @@ class C<T, U> {}
 = Type base specification =
 The type base specification is the base class followed by the implemented interfaces. If the base class is omitted, the superclass is {{{java.lang.Object}}}.
 <blockquote><em>
-class-base:
+type-base:
     : type-list
 type-list:
     class-type<br/>
