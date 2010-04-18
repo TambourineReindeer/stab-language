@@ -3,35 +3,38 @@
 
 = Interface declaration =
 The syntax to declare an interface is specified by:
-<blockquote><em>
+<em><pre>
 interface-declaration:
-    annotations<sub>opt</sub> interface-modifiers<sub>opt</sub> <tt>interface</tt> identifier type-parameter-list<sub>opt</sub> type-base<sub>opt</sub><br/>
-        type-parameter-constraints-clauses<sub>opt</sub> interface-body ;<sub>opt</sub>
-</em></blockquote>
+    annotations,,opt,, interface-modifiers,,opt,, *interface* identifier type-parameter-list,,opt,, type-base,,opt,, 
+        type-parameter-constraints-clauses,,opt,, interface-body *;*,,opt,,
+</pre></em>
 
 = Interface modifiers =
 The interface modifiers in Stab have the same usage and semantic as the interface modifiers in Java.
-<blockquote><em>
+<em><pre>
 interface-modifiers:
-    interface-modifier<br/>
+    interface-modifier
     interface-modifiers interface-modifier
+    
 interface-modifier:
-    <b>One of</b> <tt>public protected private</tt>
-</em></blockquote>
+    *One of public protected private*
+</pre></em>
 
 = Type base specification =
 In the case of interfaces, the type base is a list of interfaces.
 
 = Interface body =
 The interface body is the place where the members of an interface are declared. Only methods, properties, and indexer can be declared.
-<blockquote><em>
+<em><pre>
 interface-body:
-    { interface-member-declarations<sub>opt</sub> }
+    *{* interface-member-declarations,,opt,, *}*
+    
 interface-member-declarations:
-    interface-member-declaration<br/>
+    interface-member-declaration
     interface-member-declarations interface-member-declaration
+    
 interface-member-declaration:
-    interface-method-declaration<br/>
-    interface-property-declaration<br/>
+    interface-method-declaration
+    interface-property-declaration
     interface-indexer-declaration
-</em></blockquote>
+</pre></em>
