@@ -4,13 +4,13 @@
 The syntax to declare a property in an interface is specified by:
 <em><pre>
 interface-property-declaration:
-    annotations,,opt,, type identifier *{* interface-accessors *}*
+    annotations,,opt,, type identifier *{* interface-accessors *}* 
 
 interface-accessors:
-    annotations,,opt,, *get* ; 
-    annotations,,opt,, *set* ; 
-    annotations,,opt,, *get ;* annotations,,opt,, *set* ; 
-    annotations,,opt,, *set ;* annotations,,opt,, *get* ;
+    annotations,,opt,, *get ;* 
+    annotations,,opt,, *set ;* 
+    annotations,,opt,, *get ;* annotations,,opt,, *set ;* 
+    annotations,,opt,, *set ;* annotations,,opt,, *get ;* 
 </pre></em>
 The specified accessors are implicitly {{{public}}} and {{{abstract}}}.
 
