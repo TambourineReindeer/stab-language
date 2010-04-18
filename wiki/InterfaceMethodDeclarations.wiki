@@ -1,6 +1,4 @@
 #summary Declaration of interface methods.
-<wiki:toc max_depth="3"/>
-
 = Interface method declaration =
 The syntax to declare a method in an interface is specified by:
 <em><pre>
