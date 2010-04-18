@@ -8,10 +8,10 @@ interface-property-declaration:
 </pre></em>
 <em><pre>
 interface-accessors:
-    annotations,,opt,, get ;
-    annotations,,opt,, set ;
-    annotations,,opt,, get ; annotations,,opt,, set ;
-    annotations,,opt,, set ; annotations,,opt,, get ;
+    annotations,,opt,, *get ;* 
+    annotations,,opt,, *set ;* 
+    annotations,,opt,, *get ;* annotations,,opt,, *set ;* 
+    annotations,,opt,, *set ;* annotations,,opt,, *get ;*
 </pre></em>
 The specified accessors are implicitly {{{public}}} and {{{abstract}}}.
 
