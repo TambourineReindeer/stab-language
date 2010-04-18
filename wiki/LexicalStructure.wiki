@@ -3,105 +3,115 @@
 
 = Lexical analysis =
 The process of scanning a source file is described by the grammar productions:
-<blockquote><em>
+<em><pre>
 input:
-    input-section<sub>opt</sub>
+    input-section,,opt,, 
+    
 input-section:
-    input-section-part<br/>
+    input-section-part
     input-section input-section-part
+    
 input-section-part:
-    input-elements<sub>opt</sub><br/>
+    input-elements,,opt,, 
     pp-directive
+    
 input-elements:
-    input-element<br/>
+    input-element
     input-elements input-element
+    
 input-element:
-    whitespace<br/>
-    comment<br/>
+    whitespace
+    comment
     token
-</em></blockquote>
+</pre></em>
 
 = Newlines =
-<blockquote><em>
+<em><pre>
 new-line-character:
-    <b>Carriage return (U+000D)<br/>
-    Line feed (U+000A)<br/>
-    Next line (U+0085)<br/>
-    Line separator (U+2028)<br/>
-    Paragraph separator (U+2029)</b> 
-</em></blockquote>
-<blockquote><em>
+    *Carriage return (U+000D)* 
+    *Line feed (U+000A)* 
+    *Next line (U+0085)* 
+    *Line separator (U+2028)* 
+    *Paragraph separator (U+2029)* 
+    
 new-line:
-    <b>Carriage return (U+000D)<br/>
-    Line feed (U+000A)<br/>
-    Carriage return (U+000D)</b> immediately followed by <b>Line feed (U+000A)<br/>
-    Next line (U+0085)<br/>
-    Line separator (U+2028)<br/>
-    Paragraph separator (U+2029)</b> 
-</em></blockquote>
+    *Carriage return (U+000D)* 
+    *Line feed (U+000A)* 
+    *Carriage return (U+000D) immediately followed by Line feed (U+000A)* 
+    *Next line (U+0085)* 
+    *Line separator (U+2028)* 
+    *Paragraph separator (U+2029)* 
+</pre></em>
 
 = Whitespaces =
-<blockquote><em>
+<em><pre>
 whitespace:
-    <b>Space (U+0020)<br/>
-    Horizontal tab (U+0009)<br/>
-    Vertical tab (U+000B)<br/>
-    Form feed (U+000C)</b> 
-</em></blockquote>
+    *Space (U+0020)* 
+    *Horizontal tab (U+0009)* 
+    *Vertical tab (U+000B)* 
+    *Form feed (U+000C)* 
+</pre></em>
 
 = Comments =
-The language supports the traditional C++ comments:
-<blockquote><em>
+The language supports traditional C++ comments:
+<em><pre>
 comment:
-    single-line-comment<br/>
+    single-line-comment
     delimited-comment
+    
 single-line-comment:
-    // input-characters <sub>opt</sub>
+    *//* input-characters,,opt,,
+    
 input-characters:
-    input-character<br/>
+    input-character
     input-characters input-character
+    
 input-character:
-    <b>Any Unicode character except a</b> new-line-character
+    *Any Unicode character except a* new-line-character
+    
 delimited-comment:
-    /`*` <b>Any Unicode characters except the sequence `*`/</b> `*`/
-</em></blockquote>
+    */`*` Any Unicode characters except the `*`/ sequence `*`/*
+</pre></em>
 
 = Tokens =
-<blockquote><em>
+<em><pre>
 token:
-    identifier<br/>
-    @identifier<br/>
-    @keyword<br/>
-    keyword<br/>
-    integer-literal<br/>
-    real-literal<br/>
-    character-literal<br/>
-    string-literal<br/>
+    identifier
+    *@* identifier
+    keyword
+    *@* keyword
+    integer-literal
+    real-literal
+    character-literal
+    string-literal
     separator
-</em></blockquote>
+</pre></em>
 
 == Unicode escape sequences ==
 Unicode escape sequences can be part of identifiers, strings and character.
-<blockquote><em>
+<em><pre>
 unicode-escape-sequence:
-    \u hex-digit hex-digit hex-digit hex-digit<br/>
-    \U hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit
-</em></blockquote>
+    *\u* hex-digit hex-digit hex-digit hex-digit
+    *\U* hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit hex-digit
+</pre></em>
 
 == Identifiers ==
 The @ character can be added before an identifier or a keyword. The resulting token is an identifier without the @ character.
 It is useful to use keywords as identifiers when a library has been written in Java.
-<blockquote><em>
+<em><pre>
 identifier:
-    identifier-start identifier-parts <sub>opt</sub>
+    identifier-start identifier-parts,,opt,,
+    
 identifier-start:
-    <b>Any character or</b> unicode-escape-sequence <b>where java.lang.Character.isJavaIdentifierStart() is true</b>  
+    *Any character or* unicode-escape-sequence *where java.lang.Character.isJavaIdentifierStart() is true* 
+    
 identifier-parts:
-    identifier-part<br/>
+    identifier-part
     identifier-parts identifier-part
+    
 identifier-part:
-    <b>Any character or</b> unicode-escape-sequence <b>where java.lang.Character.isJavaIdentifierPart() is true</b>
-</em></blockquote>
+    *Any character or* unicode-escape-sequence *where java.lang.Character.isJavaIdentifierPart() is true*
+</pre></em>
 
 == Keywords ==
 The following tokens cannot be used as identifier except when prefixed with @:
@@ -126,58 +136,68 @@ These identifiers are considered as keywords when used in some places in the cod
 
 == Integer literals ==
 Values of types {{{int}}} and {{{long}}} can be represented as integer literals:
-<blockquote><em>
+<em><pre>
 integer-literal:
-    decimal-digits long-type <sub>opt</sub><br/>
-    0x hex-digits long-type <sub>opt</sub><br/>
-    0X hex-digits long-type <sub>opt</sub><br/>
+    decimal-digits long-type,,opt,, 
+    0x hex-digits long-type,,opt,, 
+    0X hex-digits long-type,,opt,, 
+    
 decimal-digits:
-    decimal-digit<br/>
+    decimal-digit
     decimal-digits decimal-digit
+    
 decimal-digit:
-    <b>One of</b> 0 1 2 3 4 5 6 7 8 9
+    *One of 0 1 2 3 4 5 6 7 8 9* 
+    
 hex-digits:
-    hex-digit<br/>
+    hex-digit
     hex-digits hex-digit
+    
 hex-digit:
-    <b>One of</b> 0 1 2 3 4 5 6 7 8 9 A B C D E F a b c d e f
+    *One of 0 1 2 3 4 5 6 7 8 9 A B C D E F a b c d e f* 
+    
 long-type:
-    l <b>or</b> L
-</em></blockquote>
+    *One of l L* 
+</pre></em>
 The values without the optional 'L' suffix and outside of the range of {{{int}}} values are considered as {{{long}}} literals.
 
 == Real literals ==
 Values of types {{{float}}} and {{{double}}} can be represented as real literals:
-<blockquote><em>
+<em><pre>
 real-literal:
-    decimal-digits . decimal-digits exponent-part <sub>opt</sub> real-type <sub>opt</sub><br/>
-    . decimal-digits exponent-part <sub>opt</sub> real-type <sub>opt</sub><br/>
-    decimal-digits exponent-part real-type <sub>opt</sub><br/>
+    decimal-digits . decimal-digits exponent-part,,opt,, real-type,,opt,, 
+    . decimal-digits exponent-part,,opt,, real-type,,opt,,
+    decimal-digits exponent-part real-type,,opt,, 
     decimal-digits real-type
+    
 exponent-part:
-    e +<sub>opt</sub> decimal-digits<br/>
-    e -<sub>opt</sub> decimal-digits<br/>
-    E +<sub>opt</sub> decimal-digits<br/>
-    E -<sub>opt</sub> decimal-digits
+    *e +*,,opt,, decimal-digits
+    *e -*,,opt,, decimal-digits
+    *E +*,,opt,, decimal-digits
+    *E -*,,opt,, decimal-digits
+    
 real-type:
-    <b>One of</b> f F d D
-</em></blockquote>
+    *One of f F d D*
+</pre></em>
 
 == Character literals ==
 Values of type {{{char}}} can be represented as character literals:
-<blockquote><em>
+<em><pre>
 character-literal:
-    ' character '
+    *'* character *'* 
+    
 character:
-    <b>Any character except quote (U+0027), backslash (U+005C), and</b> new-line-character<br/>
-    simple-escape-sequence<br/>
-    hexadecimal-escape-sequence<br/>
+    *Any character except quote (U+0027), backslash (U+005C), and* new-line-character
+    simple-escape-sequence
+    hexadecimal-escape-sequence
     unicode-escape-sequence
+    
 simple-escape-sequence:
-    <b>One of</b> \' \" \\ \0 \a \b \f \n \r \t \v
+    *One of \' \" \\ \0 \a \b \f \n \r \t \v* 
+    
 hexadecimal-escape-sequence:
-    \x hex-digit hex-digit <sub>opt</sub> hex-digit <sub>opt</sub> hex-digit <sub>opt</sub>
-</em></blockquote>
+    *\x* hex-digit hex-digit,,opt,, hex-digit,,opt,, hex-digit,,opt,,
+</pre></em>
 The characters represented by simple escape sequences are:
 || *Escape sequence* || *Unicode* ||
 || \' || U+0027 ||
@@ -194,25 +214,29 @@ The characters represented by simple escape sequences are:
 
 == String literals ==
 Values of type {{{java.lang.String}}} can be represented as string literals:
-<blockquote><em>
+<em><pre>
 string-literal:
-    " string-literal-characters <sub>opt</sub> "<br/>
-    @" verbatim-string-characters <sub>opt</sub> "
+    *"* string-literal-characters,,opt,, *"* 
+    *@"* verbatim-string-characters,,opt,, *"* 
+    
 string-literal-characters:
-    string-literal-character<br/>
+    string-literal-character
     string-literal-characters string-literal-character
+    
 string-literal-character:
-    <b>Any character except double quote (U+0022), backslash (U+005C), and</b> new-line-character<br/>
-    simple-escape-sequence<br/>
-    hexadecimal-escape-sequence<br/>
+    *Any character except double quote (U+0022), backslash (U+005C), and* new-line-character
+    simple-escape-sequence
+    hexadecimal-escape-sequence
     unicode-escape-sequence
+    
 verbatim-string-characters:
-    verbatim-string-character<br/>
+    verbatim-string-character
     verbatim-string-characters verbatim-string-character
+    
 verbatim-string-character:
-    <b>Any character except double quote (U+0022)</b><br/>
-    " "
-</em></blockquote>
+    *Any character except double quote (U+0022)* 
+    *""*
+</pre></em>
 Verbatim string literals can be used to represent strings that would otherwise require a lot of escape sequences if represented using the traditional format:
 {{{
 var s1 = @"C:\tmp\f.txt";
