@@ -1,0 +1,32 @@
+#summary Declaration of enums.
+<wiki:toc max_depth="3"/>
+
+= Enum declaration =
+The syntax to declare an enum is specified by:
+<blockquote><em>
+enum-declaration:
+    annotations<sub>opt</sub> enum-modifiers<sub>opt</sub> <tt>enum</tt> identifier interface-base<sub>opt</sub> enum-body ;<sub>opt</sub>
+</em></blockquote>
+An enum is a special kind of class.
+
+= Enum modifiers =
+The enum modifiers in Stab have the same usage and semantic as the enum modifiers in Java.
+<blockquote><em>
+enum-modifiers:
+    enum-modifier<br/>
+    enum-modifiers enum-modifier
+enum-modifier:
+    <b>One of</b> <tt>public protected private</tt>
+</em></blockquote>
+
+= Enum body =
+The enum body is the place where the members of an enum are declared.
+<blockquote><em>
+enum-body:
+    { enum-constant-declarations<sub>opt</sub> ;<sub>opt</sub> class-member-declarations<sub>opt</sub> }
+enum-constant-declarations:
+    enum-constant-declaration<br/>
+    enum-constant-declarations , enum-constant-declaration
+enum-constant-declaration:
+    annotations<sub>opt</sub> identifier argument-list<sub>opt</sub> class-body<sub>opt</sub>
+</em></blockquote>
