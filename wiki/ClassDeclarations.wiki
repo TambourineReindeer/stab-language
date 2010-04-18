@@ -5,7 +5,7 @@
 The syntax to declare a class is specified by:
 <blockquote><em>
 class-declaration:
-    annotations<sub>opt</sub> class-modifiers<sub>opt</sub> <tt>partial</tt><sub>opt</sub> <tt>class</tt> identifier type-parameter-list<sub>opt</sub> class-base<sub>opt</sub><br/>
+    annotations<sub>opt</sub> class-modifiers<sub>opt</sub> <tt>partial</tt><sub>opt</sub> <tt>class</tt> identifier type-parameter-list<sub>opt</sub> type-base<sub>opt</sub><br/>
         type-parameter-constraints-clauses<sub>opt</sub> class-body ;<sub>opt</sub>
 </em></blockquote>
 
@@ -33,8 +33,8 @@ For example:
 class C<T, U> {}
 }}}
 
-= Class base specification =
-The class base specification is the base class followed by the implemented interfaces. If the base class is omitted, the superclass is {{{java.lang.Object}}}.
+= Type base specification =
+The type base specification is the base class followed by the implemented interfaces. If the base class is omitted, the superclass is {{{java.lang.Object}}}.
 <blockquote><em>
 class-base:
     : type-list
