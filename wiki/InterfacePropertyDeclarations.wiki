@@ -1,15 +1,24 @@
 #summary Declaration of interface properties.
-<wiki:toc max_depth="3"/>
 
 = Interface property declaration =
 The syntax to declare a property in an interface is specified by:
-<blockquote><em>
+<em><pre>
 interface-property-declaration:
-    annotations<sub>opt</sub> type identifier { interface-accessors }
+    annotations,,opt,, type identifier *{* interface-accessors *}*
+
 interface-accessors:
-    annotations<sub>opt</sub> <tt>get</tt> ;<br/>
-    annotations<sub>opt</sub> <tt>set</tt> ;<br/>
-    annotations<sub>opt</sub> <tt>get</tt> ; annotations<sub>opt</sub> <tt>set</tt> ;<br/>
-    annotations<sub>opt</sub> <tt>set</tt> ; annotations<sub>opt</sub> <tt>get</tt> ;
-</em></blockquote>
+    annotations,,opt,, *get ;* 
+    annotations,,opt,, *set ;* 
+    annotations,,opt,, *get ;* annotations,,opt,, *set ;* 
+    annotations,,opt,, *set ;* annotations,,opt,, *get ;* 
+</pre></em>
 The specified accessors are implicitly {{{public}}} and {{{abstract}}}.
+
+Some valid property declarations:
+{{{
+interface A {
+    int P1 { get; } // read-only
+    long P2 { get; set; } // read-write
+    A P3 { set; } // write-only
+}
+}}}
