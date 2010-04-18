@@ -1,12 +1,11 @@
 #summary Declaration of destructors.
-<wiki:toc max_depth="3"/>
 
 = Destructor declaration =
 The syntax to declare a destructor is specified by:
-<blockquote><em>
+<em><pre>
 destructor-declaration:
-    annotations<sub>opt</sub> ~ identifier ( ) block
-</em></blockquote>
+    annotations,,opt,, ~ identifier *( )* block
+</pre></em>
 Declaring a destructor in a Stab class:
 {{{
 using java.lang;
