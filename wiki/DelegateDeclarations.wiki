@@ -1,0 +1,19 @@
+#summary Declaration of delegates.
+<wiki:toc max_depth="3"/>
+
+= Delegate declaration =
+The syntax to declare a delegate is specified by:
+<blockquote><em>
+delegate-declaration:
+    annotations<sub>opt</sub> delegate-modifiers<sub>opt</sub> <tt>delegate</tt> return-type identifier type-parameter-list<sub>opt</sub> ( formal-parameter-list<sub>opt</sub> ) type-parameter-constraints-clauses<sub>opt</sub> ;
+</em></blockquote>
+
+= Delegate modifiers =
+The delegate modifiers control the access to the type.
+<blockquote><em>
+delegate-modifiers:
+    delegate-modifier<br/>
+    delegate-modifiers delegate-modifier
+delegate-modifier:
+    <b>One of</b> <tt>public protected private</tt>
+</em></blockquote>
