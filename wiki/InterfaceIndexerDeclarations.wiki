@@ -1,10 +1,19 @@
 #summary Declaration of interface indexers.
-<wiki:toc max_depth="3"/>
 
 = Interface indexer declaration =
 The syntax to declare a indexer in an interface is specified by:
-<blockquote><em>
+<em><pre>
 interface-property-declaration:
-    annotations<sub>opt</sub> type <tt>this</tt> `[` formal-parameter-list `]` { interface-accessors }
-</em></blockquote>
+    annotations,,opt,, type *this* `[` formal-parameter-list `]` *{* interface-accessors *}*
+</pre></em>
 The specified accessors are implicitly {{{public}}} and {{{abstract}}}.
+
+Some valid indexer declarations:
+{{{
+using java.lang;
+interface A {
+    int this[int i] { get; }
+    String this[String s] { get; set; }
+    String this[int i, String s] { set; }
+}
+}}}
