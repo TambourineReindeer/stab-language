@@ -12,10 +12,18 @@ _</pre>
 property-modifiers:
     property-modifier
     property-modifiers property-modifier
-_</pre>
-<pre>_
-constructor-modifier:
+    
+property-modifier:
     *One of public protected private synchronized native strictfp final abstract virtual override static*
+_</pre>
+Each accessor can be declared with a more restrictive accessibility than the property:
+<pre>_
+accessor-modifiers:
+    accessor-modifier
+    accessor-modifiers accessor-modifier
+    
+accessor-modifier:
+    *One of public protected private* 
 _</pre>
 
 = Accessor declarations =
@@ -29,21 +37,13 @@ get-accessor-declaration:
     
 set-accessor-declaration:
     annotations,,opt,, accessor-modifiers,,opt,, *set* accessor-body
-_</pre>
-<pre>_
-accessor-modifiers:
-    accessor-modifier
-    accessor-modifiers accessor-modifier
-    
-accessor-modifier:
-    *One of public protected private* 
     
 accessor-body:
     block
     ;
 _</pre>
 
-The Stab sample:
+The sample:
 {{{
 public class C {
     private int prop;
