@@ -74,5 +74,5 @@ package A {
 Using package directives gives access to all the public types of a package by their simple names.
 <blockquote><em>
 using-alias-directive:
-    <tt>using</tt> package-name ;
+    <tt>using</tt> qualified-identifier ;
 </em></blockquote>
