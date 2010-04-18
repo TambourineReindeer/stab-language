@@ -7,6 +7,7 @@ The syntax to declare a delegate is specified by:
 delegate-declaration:
     annotations<sub>opt</sub> delegate-modifiers<sub>opt</sub> <tt>delegate</tt> return-type identifier type-parameter-list<sub>opt</sub> ( formal-parameter-list<sub>opt</sub> ) type-parameter-constraints-clauses<sub>opt</sub> ;
 </em></blockquote>
+A delegate type is an abstract class derived from {{{stab.lang.Delegate}}}. It defines an abstract method named {{{invoke}}} with the same signature as the delegate.
 
 = Delegate modifiers =
 The delegate modifiers control the access to the type.
