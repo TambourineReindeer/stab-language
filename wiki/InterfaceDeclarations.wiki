@@ -5,7 +5,7 @@
 The syntax to declare an interface is specified by:
 <blockquote><em>
 interface-declaration:
-    annotations<sub>opt</sub> interface-modifiers<sub>opt</sub> <tt>interface</tt> identifier type-parameter-list<sub>opt</sub> interface-base<sub>opt</sub><br/>
+    annotations<sub>opt</sub> interface-modifiers<sub>opt</sub> <tt>interface</tt> identifier type-parameter-list<sub>opt</sub> type-base<sub>opt</sub><br/>
         type-parameter-constraints-clauses<sub>opt</sub> interface-body ;<sub>opt</sub>
 </em></blockquote>
 
@@ -19,15 +19,8 @@ interface-modifier:
     <b>One of</b> <tt>public protected private</tt>
 </em></blockquote>
 
-= Interface base specification =
-The interface base specification is a list of implemented interfaces.
-<blockquote><em>
-interface-base:
-    : type-list
-type-list:
-    class-type<br/>
-    type-list , class-type
-</em></blockquote>
+= Type base specification =
+In the case of interfaces, the type base is a list of interfaces.
 
 = Interface body =
 The interface body is the place where the members of an interface are declared. Only methods, properties, and indexer can be declared.
