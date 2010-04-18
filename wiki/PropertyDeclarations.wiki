@@ -1,0 +1,71 @@
+#summary Declaration of properties.
+
+= Property declaration =
+The syntax to declare a property is specified by:
+<pre>_
+property-declaration:
+    annotations,,opt,, property-modifiers,,opt,, type identifier *{* accessor-declarations *}*
+_</pre>
+
+= Property modifiers =
+<pre>_
+property-modifiers:
+    property-modifier
+    property-modifiers property-modifier
+    
+constructor-modifier:
+    *One of public protected private synchronized native strictfp final abstract virtual override static*
+_</pre>
+
+= Accessor declarations =
+<pre>_
+accessor-declarations:
+    get-accessor-declaration set-accessor-declaration,,opt,, 
+    set-accessor-declaration get-accessor-declaration,,opt,,
+    
+get-accessor-declaration:
+    annotations,,opt,, accessor-modifiers,,opt,, *get* accessor-body
+    
+set-accessor-declaration:
+    annotations,,opt,, accessor-modifiers,,opt,, *set* accessor-body
+
+accessor-modifiers:
+    accessor-modifier
+    accessor-modifiers accessor-modifier
+    
+accessor-modifier:
+    *One of public protected private* 
+    
+accessor-body:
+    block
+    ;
+_</pre>
+
+The Stab sample:
+{{{
+public class C {
+    private int prop;
+    public int Prop {
+        get {
+            return prop;
+        }
+        protected set {
+            prop = value;
+        }
+    }
+}
+}}}
+is equivalent to the Java program:
+{{{
+public class C {
+    private int prop;
+    @stab.lang.PropertyGet()
+    public final int getProp() {
+        return prop;
+    }
+    @stab.lang.PropertySet()
+    protected final void setProp(int value) {
+        prop = value;
+    }
+}
+}}}
