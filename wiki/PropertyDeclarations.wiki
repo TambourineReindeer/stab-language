@@ -57,7 +57,18 @@ public class C {
     }
 }
 }}}
-is equivalent to the Java program:
+is equivalent to the program with an automatically implemented property:
+{{{
+public class C {
+    public int Prop {
+        get;
+        protected set;
+    }
+}
+}}}
+In this case the compiler generates a private inaccessible field.
+
+The previous examples are equivalent to the following Java program:
 {{{
 public class C {
     private int prop;
