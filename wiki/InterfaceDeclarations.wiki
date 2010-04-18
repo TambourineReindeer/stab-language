@@ -5,7 +5,7 @@
 The syntax to declare an interface is specified by:
 <blockquote><em>
 interface-declaration:
-    attributes<sub>opt</sub> interface-modifiers<sub>opt</sub> <tt>interface</tt> identifier type-parameter-list<sub>opt</sub> interface-base<sub>opt</sub><br/>
+    annotations<sub>opt</sub> interface-modifiers<sub>opt</sub> <tt>interface</tt> identifier type-parameter-list<sub>opt</sub> interface-base<sub>opt</sub><br/>
         type-parameter-constraints-clauses<sub>opt</sub> interface-body ;<sub>opt</sub>
 </em></blockquote>
 
