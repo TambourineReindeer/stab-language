@@ -3,27 +3,29 @@
 
 = Compilation units =
 A compilation unit represents the structure of a source file and is described by the root production of the grammar:
-<blockquote><em>
+<em><pre>
 compilation-unit:
-    using-directives<sub>opt</sub> package-member-declarations<sub>opt</sub>
+    using-directives,,opt,, package-member-declarations,,opt,, 
+    
 package-member-declarations:
-    package-member-declaration<br/>
+    package-member-declaration
     package-member-declarations package-member-declaration
+    
 package-member-declaration:
-    package-declaration<br/>
-    class-declaration<br/>
-    interface-declaration<br/>
-    enum-declaration<br/>
+    package-declaration
+    class-declaration
+    interface-declaration
+    enum-declaration
     delegate-declaration
-</em></blockquote>
+</pre></em>
 There is no restriction on the number of packages and types in a Stab source file.
 
 = Package declarations =
 A package declaration in Stab has a body delimited with { and }:
-<blockquote><em>
+<em><pre>
 package-declaration:
-    annotations<sub>opt</sub> <tt>package</tt> qualified-identifier { using-directives<sub>opt</sub> package-member-declarations<sub>opt</sub> } ;<sub>opt</sub>
-</em></blockquote>
+    annotations,,opt,, *package* qualified-identifier *{* using-directives,,opt,, package-member-declarations,,opt,, *} ;*,,opt,,
+</pre></em>
 Package declarations can be nested:
 {{{
 package A {
@@ -40,14 +42,15 @@ package A.B {
 }}}
 = Using directives =
 Using directives are used to give access to the types declared in other packages without having to fully qualify their names.
-<blockquote><em>
+<em><pre>
 using-directives:
-    using-directive<br/>
+    using-directive
     using-directives using-directive
+    
 using-directive:
-    using-alias-directive<br/>
+    using-alias-directive
     using-package-directive
-</em></blockquote>
+</pre></em>
 The directives in a single block are not affected by the other {{{using}}} directives:
 {{{
 package A {
@@ -57,10 +60,10 @@ package A {
 }}}
 == Using alias directives ==
 Using alias directives redefine a package or type name locally.
-<blockquote><em>
+<em><pre>
 using-alias-directive:
-    <tt>using</tt> identifier = package-or-type-name ;
-</em></blockquote>
+    *using* identifier = package-or-type-name ;
+</pre></em>
 Constructed generic types can be aliased:
 {{{
 using java.lang;
@@ -72,7 +75,7 @@ package A {
 
 == Using package directives ==
 Using package directives gives access to all the public types of a package by their simple names.
-<blockquote><em>
+<em><pre>
 using-alias-directive:
-    <tt>using</tt> qualified-identifier ;
-</em></blockquote>
+    *using* qualified-identifier ;
+</pre></em>
