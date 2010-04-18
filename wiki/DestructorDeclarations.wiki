@@ -1,0 +1,33 @@
+#summary Declaration of destructors.
+<wiki:toc max_depth="3"/>
+
+= Destructor declaration =
+The syntax to declare a destructor is specified by:
+<blockquote><em>
+destructor-declaration:
+    annotations<sub>opt</sub> ~ identifier ( ) destructor-body
+destructor-body:
+    block<br/>
+    ;
+</em></blockquote>
+Declaring a destructor in a Stab class:
+{{{
+using java.lang;
+class C {
+    ~C() {
+        System.out.println("C finalization");
+    }
+}
+}}}
+is equivalent to the Java code:
+{{{
+class C {
+    protected void finalize() {
+        try {
+            System.out.println("C finalization");
+        } finally {
+            super.finalize();
+        }
+    }
+}
+}}}
