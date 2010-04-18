@@ -5,10 +5,7 @@
 The syntax to declare a destructor is specified by:
 <blockquote><em>
 destructor-declaration:
-    annotations<sub>opt</sub> ~ identifier ( ) destructor-body
-destructor-body:
-    block<br/>
-    ;
+    annotations<sub>opt</sub> ~ identifier ( ) block
 </em></blockquote>
 Declaring a destructor in a Stab class:
 {{{
