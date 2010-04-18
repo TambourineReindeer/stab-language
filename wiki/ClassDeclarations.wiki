@@ -5,7 +5,7 @@
 The syntax to declare a class is specified by:
 <blockquote><em>
 class-declaration:
-    attributes<sub>opt</sub> class-modifiers<sub>opt</sub> <tt>partial</tt><sub>opt</sub> <tt>class</tt> identifier type-parameter-list<sub>opt</sub> class-base<sub>opt</sub><br/>
+    annotations<sub>opt</sub> class-modifiers<sub>opt</sub> <tt>partial</tt><sub>opt</sub> <tt>class</tt> identifier type-parameter-list<sub>opt</sub> class-base<sub>opt</sub><br/>
         type-parameter-constraints-clauses<sub>opt</sub> class-body ;<sub>opt</sub>
 </em></blockquote>
 
