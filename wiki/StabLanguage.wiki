@@ -5,3 +5,4 @@
   # [ClassDeclarations Classes]
   # [InterfaceDeclarations Interfaces]
   # [EnumDeclarations Enums]
+  # [DelegateDeclarations Delegates]
