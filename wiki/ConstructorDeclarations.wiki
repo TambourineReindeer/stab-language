@@ -23,10 +23,10 @@ constructor-modifiers:
 constructor-modifier:
     *One of public protected private synchronized native strictfp*
 </pre></em>
-= Constructor declarator =
-The constructor declarator is used to call a base constructor or a constructor of this class.
+= Constructor initializer =
+The constructor initializer is used to call a base constructor or a constructor of this class.
 <pre>_
-constructor-declarator:
+constructor-initializer:
     *: super (* argument-list,,opt,, *)* 
     *: this (* argument-list,,opt,, *)* 
 _</pre>
