@@ -10,10 +10,78 @@ class-declaration:
 </em></blockquote>
 
 = Class modifiers =
+The class modifiers in Stab have the same usage and semantic as the class modifiers in Java, except the {{{static}}} modifier which means that a class is the container of extension methods.
 <blockquote><em>
 class-modifiers:
     class-modifier<br/>
     class-modifiers class-modifier
 class-modifier:
     <b>One of</b> <tt>public protected private abstract final static</tt>
+</em></blockquote>
+
+= Type parameter list =
+The type parameter list specifies the type parameters of a generic type.
+<blockquote><em>
+type-parameter-list:
+    < identifier-list >
+identifier-list:
+    identifier<br/>
+    identifier-list , identifier
+</em></blockquote>
+For example:
+{{{
+class C<T, U> {}
+}}}
+
+= Class base specification =
+The class base specification is the base class followed by the implemented interfaces. If the base class is omitted, the superclass is {{{java.lang.Object}}}.
+<blockquote><em>
+class-base:
+    : type-list
+type-list:
+    class-type<br/>
+    type-list , class-type
+</em></blockquote>
+For example:
+{{{
+class A {}
+interface B {}
+class C : A, B {} // C extends A and implements B
+}}}
+
+= Type parameter constraints clauses =
+The type parameter constraints clauses defines the base types of the type parameters of the class.
+<blockquote><em>
+type-parameter-constraints-clauses:
+    type-parameter-constraints-clause<br/>
+    type-parameter-constraints-clauses type-parameter-constraints-clause
+type-parameter-constraints-clause:
+    where identifier : class-base
+</em></blockquote>
+The type parameter of a generic class can be constrained to implement {{{java.lang.Runnable}}} the following way:
+{{{
+using java.lang;
+class C<T> where T : Runnable {}
+}}}
+
+= Class body =
+The class body is the place where the members of a class are declared.
+<blockquote><em>
+class-body:
+    { class-member-declarations<sub>opt</sub> }
+class-member-declarations:
+    class-member-declaration<br/>
+    class-member-declarations class-member-declaration
+class-member-declaration:
+    field-declaration<br/>
+    method-declaration<br/>
+    property-declaration<br/>
+    indexer-declaration<br/>
+    constructor-declaration<br/>
+    destructor-declaration<br/>
+    static-constructor-declaration<br/>
+    class-declaration<br/>
+    interface-declaration<br/>
+    enum-declaration<br/>
+    delegate-declaration
 </em></blockquote>
