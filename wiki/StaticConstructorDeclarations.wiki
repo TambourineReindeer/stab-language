@@ -1,19 +1,18 @@
 #summary Declaration of static constructors.
-<wiki:toc max_depth="3"/>
 
 = Static constructor declaration =
 The syntax to declare a static constructor is specified by:
-<blockquote><em>
+<em><pre>
 static-constructor-declaration:
-    annotations<sub>opt</sub> <tt>static</tt> identifier ( ) block
-</em></blockquote>
-Static constructors are mapped to the {{{<clinit>}}} JVM method. There is no restriction on {{{final}}} field modifications in constructors.
+    annotations,,opt,, *static* identifier ( ) block
+</pre></em>
+Static constructors are mapped to the {{{<clinit>}}} method of the JVM. There is no restrictions on {{{final}}} field modifications in constructors.
 {{{
 class C {
     public final static int Field;
     static C() {
         int i = this.Field; // it is OK because all fields are initialized to 0
-        this.Field++; // final field can be modified without restriction
+        this.Field++; // final fields can be modified without restrictions
     }
 }
 }}}
