@@ -4,3 +4,4 @@
   # [CompilationUnits Structure of a source file]
   # [ClassDeclarations Classes]
   # [InterfaceDeclarations Interfaces]
+  # [EnumDeclarations Enums]
