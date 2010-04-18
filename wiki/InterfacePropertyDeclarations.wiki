@@ -5,7 +5,8 @@ The syntax to declare a property in an interface is specified by:
 <em><pre>
 interface-property-declaration:
     annotations,,opt,, type identifier *{* interface-accessors *}* 
-
+</pre></em>
+<em><pre>
 interface-accessors:
     annotations,,opt,, get ;
     annotations,,opt,, set ;
