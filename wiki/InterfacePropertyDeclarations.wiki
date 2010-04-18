@@ -7,10 +7,10 @@ interface-property-declaration:
     annotations,,opt,, type identifier *{* interface-accessors *}*
 
 interface-accessors:
-    annotations,,opt,, *get ;* 
-    annotations,,opt,, *set ;* 
-    annotations,,opt,, *get ;* annotations,,opt,, *set ;* 
-    annotations,,opt,, *set ;* annotations,,opt,, *get ;*
+    annotations,,opt,, *get* ; 
+    annotations,,opt,, *set* ; 
+    annotations,,opt,, *get ;* annotations,,opt,, *set* ; 
+    annotations,,opt,, *set ;* annotations,,opt,, *get* ;
 </pre></em>
 The specified accessors are implicitly {{{public}}} and {{{abstract}}}.
 
