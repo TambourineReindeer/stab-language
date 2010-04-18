@@ -56,7 +56,7 @@ type-parameter-constraints-clauses:
     type-parameter-constraints-clause<br/>
     type-parameter-constraints-clauses type-parameter-constraints-clause
 type-parameter-constraints-clause:
-    where identifier : class-base
+    <tt>where</tt> identifier : class-base
 </em></blockquote>
 The type parameter of a generic class can be constrained to implement {{{java.lang.Runnable}}} the following way:
 {{{
