@@ -3,31 +3,33 @@
 
 = Class declaration =
 The syntax to declare a class is specified by:
-<blockquote><em>
+<em><pre>
 class-declaration:
-    annotations<sub>opt</sub> class-modifiers<sub>opt</sub> <tt>partial</tt><sub>opt</sub> <tt>class</tt> identifier type-parameter-list<sub>opt</sub> type-base<sub>opt</sub><br/>
-        type-parameter-constraints-clauses<sub>opt</sub> class-body ;<sub>opt</sub>
-</em></blockquote>
+    annotations,,opt,, class-modifiers,,opt,, *partial*,,opt,, *class* identifier type-parameter-list,,opt,, type-base,,opt,, 
+        type-parameter-constraints-clauses,,opt,, class-body *;*,,opt,,
+</pre></em>
 
 = Class modifiers =
 The class modifiers in Stab have the same usage and semantic as the class modifiers in Java, except the {{{static}}} modifier which means that a class is the container of extension methods.
-<blockquote><em>
+<em><pre>
 class-modifiers:
-    class-modifier<br/>
+    class-modifier
     class-modifiers class-modifier
+    
 class-modifier:
-    <b>One of</b> <tt>public protected private abstract final static</tt>
-</em></blockquote>
+    *One of public protected private abstract final static*
+</pre></em>
 
 = Type parameter list =
 The type parameter list specifies the type parameters of a generic type.
-<blockquote><em>
+<em><pre>
 type-parameter-list:
-    < identifier-list >
+    *<* identifier-list *>* 
+    
 identifier-list:
-    identifier<br/>
-    identifier-list , identifier
-</em></blockquote>
+    identifier
+    identifier-list *,* identifier
+</pre></em>
 For example:
 {{{
 class C<T, U> {}
@@ -35,13 +37,14 @@ class C<T, U> {}
 
 = Type base specification =
 The type base specification is the base class followed by the implemented interfaces. If the base class is omitted, the superclass is {{{java.lang.Object}}}.
-<blockquote><em>
+<em><pre>
 type-base:
-    : type-list
+    *:* type-list
+    
 type-list:
-    class-type<br/>
-    type-list , class-type
-</em></blockquote>
+    class-type
+    type-list *,* class-type
+</pre></em>
 For example:
 {{{
 class A {}
@@ -51,13 +54,14 @@ class C : A, B {} // C extends A and implements B
 
 = Type parameter constraints clauses =
 The type parameter constraints clauses defines the base types of the type parameters of the class.
-<blockquote><em>
+<em><pre>
 type-parameter-constraints-clauses:
-    type-parameter-constraints-clause<br/>
+    type-parameter-constraints-clause
     type-parameter-constraints-clauses type-parameter-constraints-clause
+    
 type-parameter-constraints-clause:
-    <tt>where</tt> identifier : type-base
-</em></blockquote>
+    *where* identifier *:* type-base
+</pre></em>
 The type parameter of a generic class can be constrained to implement {{{java.lang.Runnable}}} the following way:
 {{{
 using java.lang;
@@ -66,22 +70,24 @@ class C<T> where T : Runnable {}
 
 = Class body =
 The class body is the place where the members of a class are declared.
-<blockquote><em>
+<em><pre>
 class-body:
-    { class-member-declarations<sub>opt</sub> }
+    *{* class-member-declarations,,opt,, *}* 
+    
 class-member-declarations:
-    class-member-declaration<br/>
+    class-member-declaration
     class-member-declarations class-member-declaration
+    
 class-member-declaration:
-    field-declaration<br/>
-    method-declaration<br/>
-    property-declaration<br/>
-    indexer-declaration<br/>
-    constructor-declaration<br/>
-    destructor-declaration<br/>
-    static-constructor-declaration<br/>
-    class-declaration<br/>
-    interface-declaration<br/>
-    enum-declaration<br/>
+    field-declaration
+    method-declaration
+    property-declaration
+    indexer-declaration
+    constructor-declaration
+    destructor-declaration
+    static-constructor-declaration
+    class-declaration
+    interface-declaration
+    enum-declaration
     delegate-declaration
-</em></blockquote>
+</pre></em>
