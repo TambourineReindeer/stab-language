@@ -1,0 +1,28 @@
+#summary Declaration of fields.
+
+= Field declaration =
+The syntax to declare a field is specified by:
+<pre>_
+field-declaration:
+    annotations,,opt,, field-modifiers,,opt,, type variable-declarators *;* 
+
+variable-declarators:
+    variable-declarator
+    variable-declarators *,* variable-declarator
+    
+variable-declarator:
+    identifier
+    identifier *=* expression
+    identifier *=* array-initializer
+_</pre>
+
+= Field modifiers =
+The field modifiers in Stab have the same usage and semantics as in Java.
+<pre>_
+field-modifiers:
+    field-modifier
+    field-modifiers field-modifier
+    
+field-modifier:
+    *One of public protected private final static transient volatile*
+_</pre>
