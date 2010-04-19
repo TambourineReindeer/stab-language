@@ -14,7 +14,7 @@ method-body:
 _</pre>
 
 = Method modifiers =
-The method modifiers in Stab have the same usage and semantics as in Java.
+The method modifiers in Stab have the same usage and semantic as in Java.
 <pre>_
 method-modifiers:
     method-modifier
