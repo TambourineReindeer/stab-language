@@ -1,0 +1,84 @@
+#summary Declaration of methods.
+
+= Method declaration =
+The syntax to declare a method is specified by:
+<pre>_
+method-declaration:
+    annotations,,opt,, method-modifiers,,opt,, *partial* return-type identifier type-parameter-list,,opt,, *(* formal-parameter-list,,opt,, *)* 
+            type-parameter-constraints-clauses,,opt,, method-body
+_</pre>
+<pre>_
+method-body:
+    block
+    *;*
+_</pre>
+
+= Method modifiers =
+The method modifiers in Stab have the same usage and semantics as in Java.
+<pre>_
+method-modifiers:
+    method-modifier
+    method-modifiers method-modifier
+    
+method-modifier:
+    *One of public protected private final abstract virtual override static synchronized native strictfp*
+_</pre>
+
+= Method parameters =
+This production of the grammar is also used to parse the parameters of constructors, indexers and delegates.
+<pre>_
+formal-parameter-list:
+    fixed-parameters
+    this-parameter fixed-parameters
+    fixed-parameters *,* parameter-array
+    this-parameter fixed-parameters *,* parameter-array
+    parameter-array
+    
+fixed-parameters:
+    fixed-parameter
+    fixed-parameters *,* fixed-parameter
+    
+fixed-parameter:
+    annotations,,opt,, type identifier
+    
+this-parameter:
+    annotations,,opt,, *this* type identifier
+    
+parameter-array:
+    annotations,,opt,, *params* array-type identifier
+_</pre>
+
+== This parameter ==
+A parameter prefixed by {{{this}}} is used to declare an extension method.
+An extension method is a static method which can be called using the instance method call syntax:
+{{{
+using java.lang;
+static class Strings {
+    static String capitalize(this String s) {
+        return Character.toUpperCase(s[0]) + s.substring(1);
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(args[0].capitalize());
+    }
+}
+}}}
+
+== Parameter array ==
+A parameter prefixed with *params* allows a method to be called with a variable number of arguments:
+{{{
+using java.lang;
+class Test {
+    static String concat(params String[] strings) {
+        var sb = new StringBuilder();
+        foreach (var s in strings) {
+            sb.append(s);
+        }
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+        System.out.println(concat("a", "b", "c"));
+    }
+}
+}}}
