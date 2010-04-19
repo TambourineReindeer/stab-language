@@ -5,7 +5,8 @@ The syntax to declare a field is specified by:
 <pre>_
 field-declaration:
     annotations,,opt,, field-modifiers,,opt,, type variable-declarators *;* 
-
+_</pre>
+<pre>_
 variable-declarators:
     variable-declarator
     variable-declarators *,* variable-declarator
