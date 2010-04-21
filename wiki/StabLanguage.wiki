@@ -17,3 +17,4 @@
     * [InterfaceIndexerDeclarations Indexers]
   # [EnumDeclarations Enums]
   # [DelegateDeclarations Delegates]
+  # [AnnotationsUsage Annotations]
