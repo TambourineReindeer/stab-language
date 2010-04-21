@@ -25,7 +25,8 @@ The enum body is the place where the members of an enum are declared.
 <em><pre>
 enum-body:
     *{* enum-constant-declarations,,opt,, *,*,,opt,, enum-member-declarations,,opt,, *}* 
-
+</pre></em>
+<em><pre>
 enum-member-declarations:
     *;*,,opt,, class-member-declarations
 </pre></em>
