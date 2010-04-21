@@ -1,0 +1,46 @@
+#summary Annotations usage.
+
+= Annotations =
+The syntax to annotate packages, types, type members or method parameters is specified by:
+<pre>_
+annotations:
+    annotation-section
+    annotations annotation-section
+    
+annotation-section:
+    *`[`* annotation-list , ,,opt,, *`]`* 
+    
+annotation-list:
+    annotation
+    annotation-list *,* annotation
+    
+annotation:
+    class-type annotation-arguments,,opt,, 
+    
+annotation-arguments:
+    *(* annotation-value *)* 
+    *(* annotation-named-values *)* 
+    
+annotation-named-values:
+    annotation-named-value
+    annotation-named-values *,* annotation-named-value
+_</pre>
+<pre>_
+annotation-named-value:
+    identifier *=* annotation-value
+_</pre>
+
+= Annotation values =
+<pre>_
+annotation-value:
+    conditional-expression
+    annotation-section
+    annotation-array-value
+    
+annotation-array-value:
+    *{* annotation-value-list , ,,opt,, *}*
+    
+annotation-value-list:
+    annotation-value
+    annotation-value-list *,* annotation-value
+_</pre>
