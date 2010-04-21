@@ -29,6 +29,14 @@ _</pre>
 annotation-named-value:
     identifier *=* annotation-value
 _</pre>
+Specifying a single unnamed argument:
+{{{
+[AnnotationType("Annotation value")]
+}}}
+is equivalent to:
+{{{
+[AnnotationType(value = "Annotation value")]
+}}}
 
 = Annotation values =
 <pre>_
