@@ -14,7 +14,7 @@ method-body:
 _</pre>
 
 = Method modifiers =
-The method modifiers in Stab have the same usage and semantic as in Java.
+The method modifiers in Stab have the same usage and semantic as in Java. Without modifiers, a method is considered to be {{{final}}}. The {{{virtual}}} modifier must be explicitly specified to declare a virtual method. The {{{override}}} modifier must be explicitly specified to override a virtual method.
 <pre>_
 method-modifiers:
     method-modifier
