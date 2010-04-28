@@ -1,0 +1,24 @@
+#summary The Stab command line compiler
+
+= Jar files =
+
+The compiler is contained in {{{stabc.jar}}}. The main class is {{{stab.tools.compiler.Application}}}. It depends on {{{asm-3.2.jar}}} and {{{stabrt.jar}}} (the runtime library for the Stab language).
+
+The command line to invoke the compiler is:
+{{{
+> java -cp asm-3.2.jar;stabrt.jar;stabc.jar stab.tools.compiler.Application <options> <files>
+}}}
+{{{stabc.jar}}} is an executable jar, alternatively you can type:
+{{{
+> java -jar stabc.jar <options> <files>
+}}}
+
+= Options =
+
+== classpath ==
+{{{-classpath:<paths>}}} or {{{-cp:<paths>}}} is used to specify the paths to the classes referenced by the program to compile.
+The runtime library must always be included using this option:
+{{{
+> java -cp asm-3.2.jar;stabrt.jar;stabc.jar stab.tools.compiler.Application -cp:stabrt.jar Test.stab 
+}}}
+The first {{{-cp}}} (without colon) is a java option, the second is the option for Stab.
