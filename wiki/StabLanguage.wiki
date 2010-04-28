@@ -1,4 +1,7 @@
-#summary Table of content.
+#summary Table of contents.
+
+= Tools =
+  # [StabCompiler Stab Compiler]
 
 = Commented grammar =
   # [LexicalStructure Lexical structure]
