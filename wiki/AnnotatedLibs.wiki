@@ -3,3 +3,52 @@
 = annotatedlibs command line option =
 
 The [StabCompiler#annotatedlibs] option can be used to add annotations to libraries written in Java, or only available in binary form.
+
+This is done by creating classes or interfaces with the same name as the class to decorate, but with a naming convention on the package.
+
+== Example: Using {{{org.apache.commons.lang.WordUtils.capitalize()}}} as an extension method ==
+
+When the Stab compiler is generating an extension method, it is decorated with a {{{stab.lang.ExtensionMethod}}} annotations. Extension methods must be members of static classes. A static class is annotated with {{{stab.lang.StaticClass}}}.
+
+So to have the compiler to consider {{{capitalize()}}} as an extension method, first create this interface in a file {{{Commons.stab}}}:
+{{{
+using java.lang;
+using stab.lang;
+package stab.annotated.org.apache.commons.lang {
+    [StaticClass]
+    public interface WordUtils {
+        [ExtensionMethod]
+        String capitalize(String s);
+    }
+}
+}}}
+Note: {{{WordUtils}}} can also be an abstract class instead of an interface, it doesn't matter. Abstract classes are needed to decorate nested classes because in Stab interfaces cannot be nested.
+
+Compile the file:
+{{{
+> java -jar stabc.jar -cp:stabrt.jar Commons.stab
+}}}
+It produces {{{Commons.jar}}}
+
+Now create {{{Test.stab}}}:
+{{{
+using java.lang;
+using org.apache.commons.lang;
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("Capitalized test: " + "test".capitalize());
+    }
+}
+}}}
+
+Compile it:
+{{{
+> java -jar stabc.jar -cp:stabrt.jar;commons-lang-2.5.jar -al:Commons.jar Test.stab
+}}}
+
+Run the test:
+{{{
+> java -cp stabrt.jar;commons-lang-2.5.jar;Test.jar Test
+Capitalized test: Test
+}}}
+{{{Commons.jar}}} is not needed at runtime since it is just containing metadata for the compiler.
