@@ -16,9 +16,19 @@ The command line to invoke the compiler is:
 = Options =
 
 == classpath ==
-{{{-classpath:<paths>}}} or {{{-cp:<paths>}}} is used to specify the paths to the classes referenced by the program to compile.
+{{{-classpath:<paths>}}} or {{{-cp:<paths>}}} is used to specify the jar/ZIP files or directories containing the classes referenced by the program to compile.
 The runtime library must always be included using this option:
 {{{
 > java -cp asm-3.2.jar;stabrt.jar;stabc.jar stab.tools.compiler.Application -cp:stabrt.jar Test.stab 
 }}}
 The first {{{-cp}}} (without colon) is a java option, the second is the option for Stab.
+
+== annotatedlibs ==
+{{{-annotatedlibs:<paths>}}} or {{{-al:<paths>}}} is used to specify the jar/ZIP files or directories containing the classes used to add annotations to external libraries.
+See AnnotatedLibs for more details.
+
+A jar ({{{stabal.jar}}}) is provided to decorate some JDK classes. For example it allows indexers to be used on {{{java.util.Map}}}, and {{{java.io.Closeable}}} to be automatically closed by {{{using}}} statements.
+A command that use it looks like that:
+{{{
+> java -cp asm-3.2.jar;stabrt.jar;stabc.jar stab.tools.compiler.Application -al:stabal.jar -cp:stabrt.jar Test.stab
+}}}
