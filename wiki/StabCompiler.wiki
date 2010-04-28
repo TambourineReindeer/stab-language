@@ -15,6 +15,9 @@ The command line to invoke the compiler is:
 
 = Options =
 
+== help ==
+{{{-help}}} displays a short summary for each option of the compiler.
+
 == classpath ==
 {{{-classpath:<paths>}}} or {{{-cp:<paths>}}} is used to specify the jar/ZIP files or directories containing the classes referenced by the program to compile.
 The runtime library must always be included using this option:
