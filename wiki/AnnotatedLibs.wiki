@@ -1,0 +1,5 @@
+#summary Adding annotations to external libraries
+
+= annotatedlibs command line option =
+
+The [StabCompiler#annotatedlibs] option can be used to add annotations to libraries written in Java, or only available in binary form.
