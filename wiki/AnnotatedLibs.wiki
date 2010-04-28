@@ -8,9 +8,9 @@ This is done by creating classes or interfaces with the same name as the class t
 
 == Example: Using {{{org.apache.commons.lang.WordUtils.capitalize()}}} as an extension method ==
 
-When the Stab compiler is generating an extension method, it is decorated with a {{{stab.lang.ExtensionMethod}}} annotations. Extension methods must be members of static classes. A static class is annotated with {{{stab.lang.StaticClass}}}.
+When the Stab compiler is generating an extension method, it is decorated with a {{{stab.lang.ExtensionMethod}}} annotation. Extension methods must be members of static classes. A static class is annotated with {{{stab.lang.StaticClass}}}.
 
-So to have the compiler to consider {{{capitalize()}}} as an extension method, first create this interface in a file {{{Commons.stab}}}:
+To have the compiler to consider {{{capitalize()}}} as an extension method, create this interface in a file {{{Commons.stab}}}:
 {{{
 using java.lang;
 using stab.lang;
