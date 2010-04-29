@@ -3,6 +3,7 @@
 = Tools =
   # [StabCompiler Stab Compiler]
     * [AnnotatedLibs Adding annotations to external libraries]
+    * [ThrowsClause Generating throws clauses]
 
 = Commented grammar =
   # [LexicalStructure Lexical structure]
