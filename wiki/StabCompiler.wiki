@@ -35,3 +35,9 @@ A command that use it looks like that:
 {{{
 > java -cp asm-3.2.jar;stabrt.jar;stabc.jar stab.tools.compiler.Application -al:stabal.jar -cp:stabrt.jar Test.stab
 }}}
+
+== define ==
+{{{-define:<symbols>}}} or {{{-d:<symbols>}}} is used to define symbols for the preprocessor:
+{{{
+> java -jar stabc.jar -d:FLAG1;FLAG2 Test.stab
+}}}
