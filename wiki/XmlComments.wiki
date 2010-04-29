@@ -1,4 +1,5 @@
 #summary Documenting source code with XML comments
+<wiki:toc max_depth="3" />
 
 = XML Comments =
 Types, fields and methods can be documented using XML comments. An [StabCompiler#doc option of the command line compiler] can be used to extract these comments from the source files.
@@ -17,6 +18,17 @@ class C {
     /// <summary>Method description <paramref name="p"/></summary>
     /// <param name="p">Parameter description</param>
     void m(int p) {}
+}
+}}}
+
+=== typeparam and typeparamref ===
+The compiler checks that the value of the {{{name}}} attribute matches a type parameter of the type, otherwise there is a warning.
+
+{{{<typeparam>}}} is processed if it is a top level element. {{{<typeparamref>}}} is processed if it is a nested element.
+{{{
+/// <summary>Type description <paramref name="T"/></summary>
+/// <typeparam name="T">Type parameter description</param>
+class C<T> {
 }
 }}}
 
