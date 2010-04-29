@@ -1,4 +1,4 @@
-#summary XML Comments
+#summary Documenting source code with XML comments
 
 = XML Comments =
 Types, fields and methods can be documented using XML comments. An [StabCompiler#doc option of the command line compiler] can be used to extract these comments from the source files.
@@ -8,11 +8,13 @@ XML comments are comments starting with {{{///}}} or {{{/**}}} just preceding th
 == Specials tags ==
 Some tags are processed by the compiler. Other ones are just copied to the output file.
 
-=== param ===
+=== param and paramref ===
 The compiler checks that the value of the {{{name}}} attribute matches a parameter of the method, otherwise there is a warning.
+
+{{{<param>}}} is processed if it is a top level element. {{{<paramref>}}} is processed if it is a nested element.
 {{{
 class C {
-    /// <summary>Method description</summary>
+    /// <summary>Method description <paramref name="p"/></summary>
     /// <param name="p">Parameter description</param>
     void m(int p) {}
 }
