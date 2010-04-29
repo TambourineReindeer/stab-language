@@ -6,6 +6,15 @@ The [StabCompiler#annotatedlibs] option can be used to add annotations to librar
 
 This is done by creating classes or interfaces with the same name as the class to decorate, but with a naming convention on the package.
 
+== Compiler annotations ==
+The annotation recognized by the compiler are:
+  * {{{stab.lang.PropertyGet}}}: mark a method as a property getter.
+  * {{{stab.lang.PropertySet}}}: mark a method as a property setter.
+  * {{{stab.lang.IndexerGet}}}: mark a method as an indexer getter.
+  * {{{stab.lang.IndexerSet}}}: mark a method as an indexer setter.
+  * {{{stab.lang.Dispose}}}: indicates that a method can be called to dispose an object at the end of a {{{using}}} statement.
+  * {{{stab.lang.StaticClass}}} / {{{stab.lang.ExtensionMethod}}}: see the next section.
+
 == Example: Using {{{org.apache.commons.lang.WordUtils.capitalize()}}} as an extension method ==
 
 When the Stab compiler is generating an extension method, it is decorated with a {{{stab.lang.ExtensionMethod}}} annotation. Extension methods must be members of static classes. A static class is annotated with {{{stab.lang.StaticClass}}}.
