@@ -42,3 +42,9 @@ A command that use it looks like that:
 {{{
 > java -jar stabc.jar -d:FLAG1;FLAG2 Test.stab
 }}}
+
+== doc ==
+{{{-doc:<file>}}} is used to extract [XmlComments XML comments] from the input files:
+{{{
+> java -jar stabc.jar -doc:documentation.xml Test.stab
+}}}
