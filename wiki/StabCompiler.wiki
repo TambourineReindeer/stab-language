@@ -54,3 +54,9 @@ A command that use it looks like that:
 {{{
 > java -jar stabc.jar -out:Test.jar Test.stab
 }}}
+
+== manifest ==
+{{{-manifest:<file>}}} or {{{-m:<file>}}} is used to specify a manifest file to include in the jar file, for example to make it an executable jar.
+{{{
+> java -jar stabc.jar -m:manifest.mf Test.stab
+}}}
