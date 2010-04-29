@@ -26,7 +26,7 @@ The compiler checks that the value of the {{{name}}} attribute matches a type pa
 
 {{{<typeparam>}}} is processed if it is a top level element. {{{<typeparamref>}}} is processed if it is a nested element.
 {{{
-/// <summary>Type description <paramref name="T"/></summary>
+/// <summary>Type description <typeparamref name="T"/></summary>
 /// <typeparam name="T">Type parameter description</param>
 class C<T> {
 }
