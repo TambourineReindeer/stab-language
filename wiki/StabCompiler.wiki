@@ -1,4 +1,5 @@
 #summary The Stab command line compiler
+<wiki:toc max_depth="3" />
 
 = Jar files =
 
