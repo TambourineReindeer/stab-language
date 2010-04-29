@@ -48,3 +48,9 @@ A command that use it looks like that:
 {{{
 > java -jar stabc.jar -doc:documentation.xml Test.stab
 }}}
+
+== out ==
+{{{-out:<file>}}} is used to specify a filename for the generated jar file. By default the base name of the first input file is used.
+{{{
+> java -jar stabc.jar -out:Test.jar Test.stab
+}}}
