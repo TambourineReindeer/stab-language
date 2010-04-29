@@ -4,6 +4,7 @@
   # [StabCompiler Stab Compiler]
     * [AnnotatedLibs Adding annotations to external libraries]
     * [ThrowsClause Generating throws clauses]
+    * [XmlComments Extracting XML comments]
 
 = Commented grammar =
   # [LexicalStructure Lexical structure]
