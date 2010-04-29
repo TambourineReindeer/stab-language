@@ -32,7 +32,7 @@ class C<T> {
 }
 }}}
 
-== seealso and see ==
+=== seealso and see ===
 The compiler checks that the value of the {{{cref}}} attribute can be resolved to a type, a field or a method.
 
 {{{<seealso>}}} is processed if it is a top level element. {{{<see>}}} is processed if it is a nested element.
@@ -47,7 +47,16 @@ class D {
 }
 }}}
 
-== include ==
+=== exception ===
+The compiler checks that the value of the {{{cref}}} attribute can be resolved to a throwable type.
+{{{
+class C {
+    /// <exception cref="java.io.IOException">Why the exception is thrown</exception>
+    void m() {}
+}
+}}}
+
+=== include ===
 This element is replaced in the XML comment by the elements of an external file.
 The selection of the elements to include is specified by an XPath expression.
 {{{
