@@ -60,7 +60,7 @@ class C {
 This element is replaced in the XML comment by the elements of an external file.
 The selection of the elements to include is specified by an XPath expression.
 {{{
-/// <include file="externaldoc.xml" path="comments/comment[@name="C"]"/>
+/// <include file="externaldoc.xml" path='comments/comment[@name="C"]'/>
 class C {
 }
 }}}
