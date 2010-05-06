@@ -126,21 +126,21 @@ switch-label:
     *default :*
 _</pre>
 
-== {{{while}}} statement ==
+== {{{while}}} statements ==
 The {{{while}}} statement executes repeatedly a statement based on the evaluation of a boolean expression.
 <pre>_
 while-statement:
     *while (* expression *)* embedded-statement
 _</pre>
 
-== {{{do}}} statement ==
+== {{{do}}} statements ==
 The {{{do}}} statement executes one or more times a statement based on the evaluation of boolean expression.
 <pre>_
 do-statement:
     *do* embedded-statement *while (* expression *);*  
 _</pre>
 
-== {{{for}}} statement ==
+== {{{for}}} statements ==
 The {{{for}}} statement executes an initialization statement and then execute repeatedly a statement and an iterator statement based on the evaluation of a boolean expression.
 <pre>_
 for-statement:
@@ -150,4 +150,12 @@ _</pre>
 expression-statement-list:
     expression-statement
     expression-statement-list expression-statement
+_</pre>
+
+== {{{foreach}}} statements ==
+The {{{foreach}}} statements executes a statement for each element of an array, or for each value of an instance of {{{java.lang.Iterable<T>}}}.
+<pre>_
+foreach-statement:
+    *foreach (* type identifier *in* expression *)* embedded-statement
+    *foreach ( var* identifier *in* expression *)* embedded-statement
 _</pre>
