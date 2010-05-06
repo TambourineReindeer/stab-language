@@ -1,0 +1,48 @@
+#summary Statements grammar
+
+= Statements =
+The production of the grammar representing statements is:
+<pre>_
+statement:
+    labeled-statement
+    declaration-statement
+    embedded-statement
+    
+embedded-statement:
+    block
+    empty-statement
+    expression-statement
+    if-statement
+    switch-statement
+    while-statement
+    do-statement
+    for-statement
+    foreach-statement
+    break-statement
+    continue-statement
+    goto-statement
+    return-statement
+    throw-statement
+    try-statement
+    synchronized-statement
+    using-statement
+    yield-statement
+
+statement-list:
+    statement
+    statement-list statement
+_</pre>
+
+== Block statements ==
+The block statement is used where a statement is required to perform multiple actions.
+<pre>_
+block:
+    *{* statement-list,,opt,, *}*
+_</pre>
+
+== Empty statements ==
+The empty statement is used where a statement is required but no actions have to be performed.
+<pre>
+empty-statement:
+    *;*
+</pre>
