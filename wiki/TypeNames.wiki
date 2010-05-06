@@ -49,7 +49,8 @@ non-array-type:
 rank-specifiers:
     rank-specifier
     rank-specifiers rank-specifier
-    
+_</pre>
+<pre>_
 rank-specifier:
     `[]`
 _</pre>
