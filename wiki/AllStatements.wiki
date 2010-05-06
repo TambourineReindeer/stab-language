@@ -161,7 +161,7 @@ foreach-statement:
 _</pre>
 
 == {{{break}}} statements ==
-The {{{break}}} statement transfers the execution just after the most nested enclosing loop or {{{switch}}}.
+The {{{break}}} statement transfers control just after the most nested enclosing loop or {{{switch}}}.
 <pre>_
 break-statement:
     *break ;* 
@@ -172,4 +172,13 @@ The {{{continue}}} statement ends the current iteration of the most nested enclo
 <pre>_
 continue-statement:
     *continue ;* 
+_</pre>
+
+== {{{goto}}} statements ==
+The {{{goto}}} statement transfers control to a label. {{{goto case}}} and {{{goto default}}} forms transfer control inside the most nested enclosing {{{switch}}}.
+<pre>_
+goto-statement:
+    *goto* identifier *;* 
+    *goto case* expression *;* 
+    *goto default* 
 _</pre>
