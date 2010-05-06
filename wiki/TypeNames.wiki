@@ -7,7 +7,8 @@ type:
     primitive-type
     array-type
     type-name
-
+_</pre>
+<pre>_
 class-type:
     type-name
 _</pre>
