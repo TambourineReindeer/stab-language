@@ -52,11 +52,13 @@ _</pre>
 local-declarators:
     local-declarator
     local-declarators *,* local-declarator
-
+_</pre>
+<pre>_
 local-declarator:
     identifier
     identifier *=* local-initializer
-
+_</pre>
+<pre>_
 local-initializer:
     expression
     array-initializer
