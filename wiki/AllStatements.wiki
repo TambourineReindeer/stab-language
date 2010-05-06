@@ -182,3 +182,16 @@ goto-statement:
     *goto case* expression *;* 
     *goto default* 
 _</pre>
+
+== {{{return}}} statemens ==
+A {{{return}}} statement sets the result, if any, of the current method and stops its execution. Control is transfered to the caller of the method.
+<pre>_
+    *return* expression,,opt,, *;* 
+_</pre>
+
+== {{{throw}}} statements ==
+The {{{throw}}} statement throws an exception. The short form of the statement must be called inside a {{{catch}}} block to throw the handled exception.
+<pre>_
+throw-statement:
+    *throw* expression,,opt,, *;* 
+_</pre>
