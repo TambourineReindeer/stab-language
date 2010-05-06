@@ -47,7 +47,8 @@ The local declaration statement is used to declare and optionally initialize one
 local-declaration-statement:
     type local-declarators
     *var* identifier *=* local-initializer
-
+_</pre>
+<pre>_
 local-declarators:
     local-declarator
     local-declarators *,* local-declarator
