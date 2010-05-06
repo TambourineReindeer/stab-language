@@ -97,5 +97,28 @@ The {{{if}}} statement execute a statement based on the evaluation of a boolean 
 <pre>_
 if-statement:
     *if (* expression *)* embedded-statement
-    *if (* expression *)* embedded-statement else embedded-statement
+    *if (* expression *)* embedded-statement *else* embedded-statement
+_</pre>
+
+== {{{switch}}} statements ==
+The {{{switch}}} statement execute a statement base on the evaluation of an ordinal or string expression.
+<pre>_
+switch-statement:
+    *switch (* expression *) {* switch-sections,,opt,, *}*
+_</pre>
+<pre>_
+switch-sections:
+    switch-section
+    switch-sections switch-section
+
+switch-section:
+    switch-labels statement-list
+
+switch-labels:
+    switch-label
+    switch-labels switch-label
+
+switch-label:
+    *case* expression *:* 
+    *default :*
 _</pre>
