@@ -101,7 +101,7 @@ if-statement:
 _</pre>
 
 == {{{switch}}} statements ==
-The {{{switch}}} statement execute a statement base on the evaluation of an ordinal or string expression.
+The {{{switch}}} statement execute a statement based on the evaluation of an ordinal or string expression.
 <pre>_
 switch-statement:
     *switch (* expression *) {* switch-sections,,opt,, *}*
@@ -124,4 +124,11 @@ _</pre>
 switch-label:
     *case* expression *:* 
     *default :*
+_</pre>
+
+== {{{while}}} statement ==
+The {{{while}}} statement execute repeatedly a statement based on the evaluation of a boolean expression.
+<pre>_
+while-statement:
+    *while (* expression *)* embedded-statement
 _</pre>
