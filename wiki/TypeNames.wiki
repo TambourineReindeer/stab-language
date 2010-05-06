@@ -45,7 +45,8 @@ array-type:
 non-array-type:
     primitive-type
     type-name
-
+_</pre>
+<pre>_
 rank-specifiers:
     rank-specifier
     rank-specifiers rank-specifier
