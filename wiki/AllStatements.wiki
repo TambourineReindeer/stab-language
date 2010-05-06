@@ -1,4 +1,5 @@
 #summary Statements grammar
+<wiki:toc max_depth="3" />
 
 = Statements =
 The production of the grammar representing statements is:
@@ -42,7 +43,20 @@ _</pre>
 
 == Empty statements ==
 The empty statement is used where a statement is required but no actions have to be performed.
-<pre>
+<pre>_
 empty-statement:
     *;*
-</pre>
+_</pre>
+
+== Expression statements ==
+The expression statement is used where a statement is required to evaluate an expression. Only method calls and assignments are allowed.
+<pre>_
+expression-statement:
+    invocation-expression
+    object-creation-expression
+    assignement
+    post-decrement-expression
+    post-increment-expression
+    pre-decrement-expression
+    pre-increment-expression
+_</pre>
