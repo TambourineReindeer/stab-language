@@ -6,7 +6,7 @@ The production of the grammar representing statements is:
 <pre>_
 statement:
     labeled-statement
-    declaration-statement
+    local-declaration-statement
     embedded-statement
     
 embedded-statement:
@@ -32,6 +32,13 @@ embedded-statement:
 statement-list:
     statement
     statement-list statement
+_</pre>
+
+== Labeled statements ==
+A label can be added to a statement. This label can be used by a {{{goto}}} statement to transfer control to this statement.
+<pre>_
+labeled-statement:
+    identifier: statement
 _</pre>
 
 == Block statements ==
