@@ -166,3 +166,10 @@ The {{{break}}} statement transfers the execution just after the most nested enc
 break-statement:
     *break ;* 
 _</pre>
+
+== {{{continue}}} statements ==
+The {{{continue}}} statement ends the current iteration of the most nested enclosing loop.
+<pre>_
+continue-statement:
+    *continue ;* 
+_</pre>
