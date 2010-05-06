@@ -39,9 +39,11 @@ type-arguments:
     type-arguments *,* type-argument
     
 type-argument:
-    type-name
     array-type
+    type-name
+    type-name *: ?* 
     *?* 
+    *? : type-name* 
     
 array-type:
     non-array-type rank-specifiers
