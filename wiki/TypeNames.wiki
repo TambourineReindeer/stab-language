@@ -39,7 +39,8 @@ type-arguments:
     type-arguments *,* type-argument
     
 type-argument:
-    type
+    type-name
+    array-type
     *?* 
     
 array-type:
@@ -58,3 +59,10 @@ _</pre>
 rank-specifier:
     `[]`
 _</pre>
+Some examples of type names used to declare variables:
+{{{
+int v1; // an integer
+char[] v2; // an array of characters
+java.lang.Class<?> v3; // a class of any type
+java.util.List<int[]> v4; // a list of arrays of integers
+}}}
