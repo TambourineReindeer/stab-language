@@ -1,0 +1,54 @@
+#summary Type names grammar
+
+= Type names =
+The syntax to write a type name is specified by: 
+<pre>_
+type:
+    primitive-type
+    array-type
+    type-name
+
+class-type:
+    type-name
+_</pre>
+<pre>_
+primitive-type:
+    *One of: boolean byte short char int long float double*
+_</pre>
+<pre>_
+return-type:
+    type
+    void
+    
+package-or-type-name:
+    type-name
+
+type-name:
+    identifier type-argument-list,,opt,,
+    type-name *.* identifier type-argument-list,,opt,,
+
+type-argument-list:
+    *<* type-arguments *>*
+_</pre>
+<pre>_
+type-arguments:
+    type-argument
+    type-arguments *,* type-argument
+    
+type-argument:
+    type
+    
+array-type:
+    non-array-type rank-specifiers
+    
+non-array-type:
+    primitive-type
+    type-name
+
+rank-specifiers:
+    rank-specifier
+    rank-specifiers rank-specifier
+    
+rank-specifier:
+    `[]`
+_</pre>
