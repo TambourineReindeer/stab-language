@@ -159,3 +159,10 @@ foreach-statement:
     *foreach (* type identifier *in* expression *)* embedded-statement
     *foreach ( var* identifier *in* expression *)* embedded-statement
 _</pre>
+
+== {{{break}}} statements ==
+The {{{break}}} statement transfers the execution just after the most nested enclosing loop or {{{switch}}}.
+<pre>_
+break-statement:
+    *break ;* 
+_</pre>
