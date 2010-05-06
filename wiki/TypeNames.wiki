@@ -67,4 +67,6 @@ int v1; // an integer
 char[] v2; // an array of characters
 java.lang.Class<?> v3; // a class of any type
 java.util.List<int[]> v4; // a list of arrays of integers
+java.util.List<? : java.util.Date> v5; // a list of dates, or subclasses of dates
+java.util.List<java.sql.Date : ?> v6; // a list of SQL dates, or superclasses of SQL dates
 }}}
