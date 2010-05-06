@@ -46,8 +46,8 @@ _</pre>
 The local declaration statement is used to declare and optionally initialize one or more local variables.
 <pre>_
 local-declaration-statement:
-    type local-declarators
-    *var* identifier *=* local-initializer
+    type local-declarators *;* 
+    *var* identifier *=* local-initializer *;* 
 _</pre>
 <pre>_
 local-declarators:
@@ -101,7 +101,7 @@ if-statement:
 _</pre>
 
 == {{{switch}}} statements ==
-The {{{switch}}} statement execute a statement based on the evaluation of an ordinal or string expression.
+The {{{switch}}} statement executes a statement based on the evaluation of an ordinal or string expression.
 <pre>_
 switch-statement:
     *switch (* expression *) {* switch-sections,,opt,, *}*
@@ -127,15 +127,27 @@ switch-label:
 _</pre>
 
 == {{{while}}} statement ==
-The {{{while}}} statement execute repeatedly a statement based on the evaluation of a boolean expression.
+The {{{while}}} statement executes repeatedly a statement based on the evaluation of a boolean expression.
 <pre>_
 while-statement:
     *while (* expression *)* embedded-statement
 _</pre>
 
 == {{{do}}} statement ==
-The {{{do}}} statement execute one or more times a statement based on the evaluation of boolean expression.
+The {{{do}}} statement executes one or more times a statement based on the evaluation of boolean expression.
 <pre>_
 do-statement:
     *do* embedded-statement *while (* expression *);*  
+_</pre>
+
+== {{{for}}} statement ==
+The {{{for}}} statement executes an initialization statement and then execute repeatedly a statement and an iterator statement based on the evaluation of a boolean expression.
+<pre>_
+for-statement:
+    *for (* local-declaration-statement,,opt,, *;* expression,,opt,, *;* expression-statement-list,,opt,, *)* embedded-statement
+_</pre>
+<pre>_
+expression-statement-list:
+    expression-statement
+    expression-statement-list expression-statement
 _</pre>
