@@ -132,3 +132,10 @@ The {{{while}}} statement execute repeatedly a statement based on the evaluation
 while-statement:
     *while (* expression *)* embedded-statement
 _</pre>
+
+== {{{do}}} statement ==
+The {{{do}}} statement execute one or more times a statement based on the evaluation of boolean expression.
+<pre>_
+do-statement:
+    *do* embedded-statement *while (* expression *);*  
+_</pre>
