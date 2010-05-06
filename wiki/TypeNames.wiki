@@ -40,7 +40,7 @@ type-arguments:
     
 type-argument:
     type
-    *?*
+    *?* 
     
 array-type:
     non-array-type rank-specifiers
