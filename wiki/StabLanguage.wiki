@@ -25,3 +25,4 @@
   # [DelegateDeclarations Delegates]
   # [AnnotationsUsage Annotations]
   # [TypeNames Type names]
+  # [AllStatements Statements]
