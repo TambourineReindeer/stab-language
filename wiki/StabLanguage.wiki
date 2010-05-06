@@ -24,3 +24,4 @@
   # [EnumDeclarations Enums]
   # [DelegateDeclarations Delegates]
   # [AnnotationsUsage Annotations]
+  # [TypeNames Type names]
