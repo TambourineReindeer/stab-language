@@ -38,7 +38,27 @@ _</pre>
 A label can be added to a statement. This label can be used by a {{{goto}}} statement to transfer control to this statement.
 <pre>_
 labeled-statement:
-    identifier: statement
+    identifier *:* statement
+_</pre>
+
+== Local declaration statements ==
+The local declaration statement is used to declare and optionally initialize one or more local variables.
+<pre>_
+local-declaration-statement:
+    type local-declarators
+    *var* identifier *=* local-initializer
+
+local-declarators:
+    local-declarator
+    local-declarators *,* local-declarator
+
+local-declarator:
+    identifier
+    identifier *=* local-initializer
+
+local-initializer:
+    expression
+    array-initializer
 _</pre>
 
 == Block statements ==
@@ -66,4 +86,12 @@ expression-statement:
     post-increment-expression
     pre-decrement-expression
     pre-increment-expression
+_</pre>
+
+== {{{if}}} statements ==
+The {{{if}}} statement execute a statement based on the evaluation of a boolean expression.
+<pre>_
+if-statement:
+    *if (* expression *)* embedded-statement
+    *if (* expression *)* embedded-statement else embedded-statement
 _</pre>
