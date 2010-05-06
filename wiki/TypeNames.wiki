@@ -22,7 +22,8 @@ return-type:
     
 package-or-type-name:
     type-name
-
+_</pre>
+<pre>_
 type-name:
     identifier type-argument-list,,opt,,
     type-name *.* identifier type-argument-list,,opt,,
