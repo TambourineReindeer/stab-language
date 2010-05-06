@@ -18,7 +18,7 @@ _</pre>
 <pre>_
 return-type:
     type
-    *void*
+    *void* 
     
 package-or-type-name:
     type-name
