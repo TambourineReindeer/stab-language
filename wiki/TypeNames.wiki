@@ -25,7 +25,7 @@ package-or-type-name:
 _</pre>
 <pre>_
 type-name:
-    identifier type-argument-list,,opt,,
+    identifier type-argument-list,,opt,, 
     type-name *.* identifier type-argument-list,,opt,,
 
 type-argument-list:
