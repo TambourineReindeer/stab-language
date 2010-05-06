@@ -43,7 +43,7 @@ type-argument:
     type-name
     type-name *: ?* 
     *?* 
-    *? : type-name* 
+    *? :* type-name
     
 array-type:
     non-array-type rank-specifiers
