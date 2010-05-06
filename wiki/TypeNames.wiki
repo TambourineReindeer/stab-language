@@ -27,7 +27,8 @@ _</pre>
 type-name:
     identifier type-argument-list,,opt,, 
     type-name *.* identifier type-argument-list,,opt,,
-
+_</pre>
+<pre>_
 type-argument-list:
     *<* type-arguments *>*
 _</pre>
