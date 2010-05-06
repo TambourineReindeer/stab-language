@@ -110,14 +110,17 @@ _</pre>
 switch-sections:
     switch-section
     switch-sections switch-section
-
+_</pre>
+<pre>_
 switch-section:
     switch-labels statement-list
-
+_</pre>
+<pre>_
 switch-labels:
     switch-label
     switch-labels switch-label
-
+_</pre>
+<pre>_
 switch-label:
     *case* expression *:* 
     *default :*
