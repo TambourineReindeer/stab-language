@@ -151,3 +151,25 @@ multiplicative-expression:
     multiplicative-expression */* unary-expression
     multiplicative-expression *%* unary-expression
 _</pre>
+
+== Unary expression ==
+An unary expression applies an unary operator to an expression.
+<pre>_
+unary-expression:
+    primary-expression
+    *+* unary-expression
+    *-* unary-expression
+    *!* unary-expression
+    *~* unary-expression
+    *(* type *)* unary-expression
+    pre-decrement-expression
+    pre-increment-expression
+_</pre>
+<pre>_
+pre-decrement-expression:
+    *--* unary-expression
+_</pre>
+<pre>_
+pre-increment-expression:
+    *++* unary-expression
+_</pre>
