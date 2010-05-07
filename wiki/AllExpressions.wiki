@@ -189,8 +189,13 @@ array-dimensions:
 _</pre>
 <pre>_
 array-sizes:
-    *`[` expression `]`* 
-    array-sizes *`[` expression `]`*
+    *`[`* expression *`]`* 
+    array-sizes *`[`* expression *`]`*
+_</pre>
+<pre>_
+array-initializer:
+    *{* expression-list,,opt,, *}*
+    *{* expression-list `,`,,opt,, *}*
 _</pre>
 <pre>_
 no-array-creation-expression:
