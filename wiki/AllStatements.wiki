@@ -222,3 +222,10 @@ _</pre>
 general-catch-clause:
     *catch* block
 _</pre>
+
+== {{{synchronized}}} statements ==
+The {{{synchronized}}}} statement obtains a mutual-exclusion lock, executes a statement and release the lock.
+<pre>
+synchronized-statement:
+    *synchronized (* expression *)* embedded-statement
+</pre>
