@@ -78,7 +78,7 @@ conditional-and-expression:
 _</pre>
 
 == Inclusive or expressions ==
-An inclusive or expression returns true if one of the boolean expression operands evaluates to true.
+An inclusive or expression returns true if one of the boolean expression operands evaluates to true. If operands are of an integral type, a bitwise operation is performed.
 <pre>_
 inclusive-or-expression:
     exclusive-or-expression
@@ -86,9 +86,17 @@ inclusive-or-expression:
 _</pre>
 
 == Exclusive or expressions ==
-An exclusive or expression returns true if the boolean expression operands evaluates to the different values.
+An exclusive or expression returns true if the boolean expression operands evaluates to the different values. If operands are of an integral type, a bitwise operation is performed.
 <pre>_
 exclusive-or-expression:
     and-expression
     exclusive-or-expression *^* and-expression
+_</pre>
+
+== And expressions ==
+The and expression returns true if both boolean expression operands evaluates to true. If operands are of an integral type, a bitwise operation is performed.
+<pre>_
+and-expression:
+    equality-expression
+    and-expression *&* equality-expression
 _</pre>
