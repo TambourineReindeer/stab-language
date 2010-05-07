@@ -175,6 +175,7 @@ pre-increment-expression:
 _</pre>
 
 == Primary expressions ==
+A primary expression is the building block or more complex expressions.
 <pre>_
 primary-expression:
     no-array-creation-expression
@@ -272,3 +273,11 @@ argument-list:
     expression
     argument-list *,* expression
 _</pre>
+
+== {{{sizeof}}} expressions ==
+A {{{sizeof}}}expression computes the number of elements of an array.
+In the example
+{{{
+var size = sizeof(new int[3]);
+}}}
+the value of {{{size}}} is 3.
