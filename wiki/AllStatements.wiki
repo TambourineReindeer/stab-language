@@ -183,7 +183,7 @@ goto-statement:
     *goto default* 
 _</pre>
 
-== {{{return}}} statemens ==
+== {{{return}}} statements ==
 A {{{return}}} statement sets the result, if any, of the current method and stops its execution. Control is transfered to the caller of the method.
 <pre>_
     *return* expression,,opt,, *;* 
@@ -194,4 +194,31 @@ The {{{throw}}} statement throws an exception. The short form of the statement m
 <pre>_
 throw-statement:
     *throw* expression,,opt,, *;* 
+_</pre>
+
+== {{{try}}} statements ==
+The {{{try}}} statement is used to handle exceptions.
+<pre>_
+try-statement:
+    *try* block catch-clauses
+    *try* block *finally* block
+    *try* block catch-clauses *finally* block
+_</pre>
+<pre>_
+catch-clauses:
+    specific-catch-clauses general-catch-clause,,opt,, 
+    specific-catch-clauses,,opt,, general-catch-clause
+_</pre>
+<pre>_
+specific-catch-clauses:
+    specific-catch-clause
+    specific-catch-clauses specific-catch-clause
+_</pre>
+<pre>_
+specific-catch-clause:
+    *catch (* class-type identifier,,opt,, *)* block
+_</pre>
+<pre>_
+general-catch-clause:
+    *catch* block
 _</pre>
