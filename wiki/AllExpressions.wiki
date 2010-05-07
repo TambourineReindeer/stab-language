@@ -173,3 +173,39 @@ _</pre>
 pre-increment-expression:
     *++* unary-expression
 _</pre>
+
+== Primary expressions ==
+<pre>_
+primary-expression:
+    no-array-creation-expression
+    array-creation-expression
+_</pre>
+<pre>_
+no-array-creation-expression:
+    literal
+    identifier type-argument-list,,opt,, 
+    *(* expression *)* 
+    primary-expression *.* identifier type-argument-list,,opt,, 
+    class-name *.* identifier type-argument-list,,opt,, 
+    primary-expression *(* argument-list,,opt,, *)* 
+    no-array-creation-expression *[* argument-list *]* 
+    *this* 
+    *super .* identifier
+    *super [* argument-list *]* 
+    *new* type *(* argument-list,,opt,, *)* object-or-collection-initializer,,opt,, 
+    *new* type object-or-collection-initializer
+    *new* anonymous-object-initializer
+    *typeof (* type *)*  
+    *typeof ( void )* 
+    *sizeof (* expression *)* 
+    post-decrement-expression
+    post-increment-expression
+_</pre>
+<pre>_
+post-decrement-expression:
+    unary-expression *--* 
+_</pre>
+<pre>_
+post-increment-expression:
+    unary-expression *++* 
+_</pre>
