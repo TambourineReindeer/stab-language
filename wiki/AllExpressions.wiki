@@ -244,6 +244,22 @@ expression-list:
     expression-list *,* expression
 _</pre>
 <pre>_
+anonymous-object-initializer:
+    *{* member-declarator-list,,opt,, *}* 
+    *{* member-declarator-list *,*,,opt,, *}*
+_</pre>
+<pre>_
+member-declarator-list:
+    member-declarator
+    member-declarator-list *,* member-declarator
+_</pre>
+<pre>_
+member-declarator:
+    identifier
+    primary-expression *.* identifier
+    class-name *.* identifier
+_</pre>
+<pre>_
 post-decrement-expression:
     unary-expression *--* 
 _</pre>
