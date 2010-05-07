@@ -202,13 +202,55 @@ no-array-creation-expression:
     post-increment-expression
 _</pre>
 <pre>_
+object-or-collection-initializer:
+    object-initializer
+    collection-initializer
+_</pre>
+<pre>_
+object-initializer:
+    *{* member-initializer-list,,opt,, *}* 
+    *{* member-initializer-list *,*,,opt,, *}*
+_</pre>
+<pre>_
+member-initializer-list:
+    member-initializer
+    member-initializer-list *,* member-initializer
+_</pre>
+<pre>_
+member-initializer:
+    identifier *=* expression
+    identifier *=* object-or-collection-initializer
+_</pre>
+<pre>_
+collection-initializer:
+    *{* element-initializer-list,,opt,, *}* 
+    *{* element-initializer-list *,*,,opt,, *}*
+_</pre>
+<pre>_
+element-initializer-list:
+    element-initializer
+    element-initializer-list *,* element-initializer
+_</pre>
+<pre>_
+element-initializer:
+    conditional-expression
+    lambda-expression
+    query-expression
+    *{* expression-list *}*
+_</pre>
+<pre>_
+expression-list:
+    expression
+    expression-list *,* expression
+_</pre>
+<pre>_
 post-decrement-expression:
     unary-expression *--* 
 _</pre>
 <pre>_
 post-increment-expression:
     unary-expression *++* 
-_</pre>`
+_</pre>
 <pre>_
 argument-list:
     expression
