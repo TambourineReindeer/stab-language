@@ -194,7 +194,7 @@ array-sizes:
 _</pre>
 <pre>_
 array-initializer:
-    *{* expression-list,,opt,, *}*
+    *{* expression-list,,opt,, *}* 
     *{* expression-list `,`,,opt,, *}*
 _</pre>
 <pre>_
