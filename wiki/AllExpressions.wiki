@@ -109,3 +109,16 @@ equality-expression:
     equality-expression *==* relational-expression
     equality-expression *!=* relational-expression
 _</pre>
+
+== Relational expressions ==
+A relational expression tests the order relation of operand expressions. When the operator is {{{instanceof}}} or {{{as}}} the left operand is compared to a specified type.
+<pre>_
+relational-expression:
+    shift-expression
+    relational-expression *<* shift-expression
+    relational-expression *>* shift-expression
+    relational-expression *<=* shift-expression
+    relational-expression *>=* shift-expression
+    relational-expression *instanceof* type
+    relational-expression *as* type
+_</pre>
