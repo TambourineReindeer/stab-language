@@ -225,7 +225,23 @@ _</pre>
 
 == {{{synchronized}}} statements ==
 The {{{synchronized}}}} statement obtains a mutual-exclusion lock, executes a statement and release the lock.
-<pre>
+<pre>_
 synchronized-statement:
     *synchronized (* expression *)* embedded-statement
-</pre>
+_</pre>
+
+== {{{using}}} statements ==
+The {{{using}}} statement executes a statement and release some specified resources.
+<pre>_
+using-statement:
+    *using (* local-declaration-statement *)* embedded-statement
+    *using (* expression *)* embedded-statement
+_</pre>
+
+== {{{yield}}} statements ==
+A {{{yield return}}} statement set the value of an iteration inside an iterator block. A {{{yield break}}} statement exists the iterator block.
+<pre>_
+yield-statement:
+    *yield return* expression *;* 
+    *yield break ;*
+_</pre>
