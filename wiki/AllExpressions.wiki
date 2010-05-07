@@ -274,8 +274,8 @@ argument-list:
     argument-list *,* expression
 _</pre>
 
-== {{{sizeof}}} expressions ==
-A {{{sizeof}}}expression computes the number of elements of an array.
+=== {{{sizeof}}} expressions ===
+A {{{sizeof}}} expression computes the number of elements of an array.
 In the example
 {{{
 var size = sizeof(new int[3]);
