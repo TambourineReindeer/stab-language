@@ -39,7 +39,8 @@ An assignment expression modify the value of a variable or the value of a proper
 <pre>_
 assignment-expression:
     unary-expression assignment-operator expression
-
+_</pre>
+<pre>_
 assignment-operator:
     *One of: = += -= *= /= %= &= |= ^= <<= >>= >>>=*
 _</pre>
@@ -61,17 +62,33 @@ null-coalescing-expression:
 _</pre>
 
 == Conditional or expressions ==
-A conditional or expression return the evaluation of a first boolean expression if true, otherwise the evaluation of a second expression.
+A conditional or expression returns the evaluation of a first boolean expression if true, otherwise the evaluation of a second expression.
 <pre>_
 conditional-or-expression:
     conditional-and-expression
-    conditional-and-expression *||* conditional-or-expression
+    conditional-or-expression *||* conditional-and-expression
 _</pre>
 
 == Conditional and expressions ==
-A conditional and expression return the evaluation of a first boolean expression if false, otherwise the evaluation of a second expression.
+A conditional and expression returns the evaluation of a first boolean expression if false, otherwise the evaluation of a second expression.
 <pre>_
 conditional-and-expression:
     inclusive-or-expression
-    inclusive-or-expression *&&* conditional-and-expression
+    conditional-and-expression *&&* inclusive-or-expression
+_</pre>
+
+== Inclusive or expressions ==
+An inclusive or expression returns true if one of the boolean expression operands evaluates to true.
+<pre>_
+inclusive-or-expression:
+    exclusive-or-expression
+    inclusive-or-expression *|* exclusive-or-expression
+_</pre>
+
+== Exclusive or expressions ==
+An exclusive or expression returns true if the boolean expression operands evaluates to the different values.
+<pre>_
+exclusive-or-expression:
+    and-expression
+    exclusive-or-expression *^* and-expression
 _</pre>
