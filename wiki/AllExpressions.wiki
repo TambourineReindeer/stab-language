@@ -184,13 +184,13 @@ primary-expression:
 _</pre>
 <pre>_
 array-dimensions:
-    *[ ]* 
-    array-dimensions *[ ]*
+    *`[` `]`* 
+    array-dimensions *`[` `]`*
 _</pre>
 <pre>_
 array-sizes:
-    *[ expression ]* 
-    array-sizes *[ expression ]*
+    *`[` expression `]`* 
+    array-sizes *`[` expression `]`*
 _</pre>
 <pre>_
 no-array-creation-expression:
