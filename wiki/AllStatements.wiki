@@ -239,7 +239,7 @@ using-statement:
 _</pre>
 
 == {{{yield}}} statements ==
-A {{{yield return}}} statement sets the value of an iteration inside an iterator block. A {{{yield break}}} statement exists the iterator block.
+A {{{yield return}}} statement sets the value of an iteration inside an iterator block. A {{{yield break}}} statement exits the iterator block.
 <pre>_
 yield-statement:
     *yield return* expression *;* 
