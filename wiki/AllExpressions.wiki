@@ -122,3 +122,13 @@ relational-expression:
     relational-expression *instanceof* type
     relational-expression *as* type
 _</pre>
+
+== Shift expressions ==
+A shift expression is used to shift the bits of an integral type.
+<pre>_
+shift-expression:
+    additive-expression
+    shift-expression << additive-expression
+    shift-expression >> additive-expression
+    shift-expression >>> additive-expression
+_</pre>
