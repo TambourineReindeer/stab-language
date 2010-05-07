@@ -1,0 +1,35 @@
+#summary Expressions grammar
+<wiki:toc max_depth="3" />
+
+= Expressions =
+The grammar of expressions is specified by the following production:
+<pre>_
+expression:
+    lambda-expression
+    conditional-expression
+    query-expression
+    assignment-expression
+_</pre>
+
+== Lambda expression ==
+A lambda expression defines is a concise syntax to define delegates, simple interfaces or expression trees.
+<pre>_
+lambda-expression:
+    lambda-signature *=>* expression
+    lambda-signature *=>* block
+_</pre>
+<pre>_
+lambda-signature:
+    *(* explicit-lambda-parameter-list,,opt,, *)* 
+    *(* identifier-list,,opt,, *)* 
+    identifier
+_</pre>
+<pre>_
+explicit-lambda-parameter-list:
+    explicit-lambda-parameter
+    explicit-lambda-parameter-list *,* explicit-lambda-parameter
+_</pre>
+<pre>_
+explicit-lambda-parameter:
+    type identifier
+_</pre>
