@@ -6,8 +6,8 @@ The grammar of expressions is specified by the following production:
 <pre>_
 expression:
     lambda-expression
-    conditional-expression
     assignment-expression
+    conditional-expression
     query-expression
 _</pre>
 
@@ -32,6 +32,16 @@ _</pre>
 <pre>_
 explicit-lambda-parameter:
     type identifier
+_</pre>
+
+== Assignment expressions ==
+An assignment expression modify the value of a variable or the value of a property.
+<pre>_
+assignment-expression:
+    unary-expression assignment-operator expression
+
+assignment-operator:
+    *One of: = += -= *= /= %= &= |= ^= <<= >>= >>>=*
 _</pre>
 
 == Conditional expressions ==
