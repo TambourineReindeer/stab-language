@@ -188,10 +188,10 @@ no-array-creation-expression:
     primary-expression *.* identifier type-argument-list,,opt,, 
     class-name *.* identifier type-argument-list,,opt,, 
     primary-expression *(* argument-list,,opt,, *)* 
-    no-array-creation-expression *[* argument-list *]* 
+    no-array-creation-expression *`[`* argument-list *`]`* 
     *this* 
     *super .* identifier
-    *super [* argument-list *]* 
+    *super `[`* argument-list *`]`* 
     *new* type *(* argument-list,,opt,, *)* object-or-collection-initializer,,opt,, 
     *new* type object-or-collection-initializer
     *new* anonymous-object-initializer
