@@ -100,3 +100,12 @@ and-expression:
     equality-expression
     and-expression *&* equality-expression
 _</pre>
+
+== Equality expressions ==
+An equality expression tests whether operand expressions are considered equal or different.
+<pre>_
+equality-expression:
+    relational-expression
+    equality-expression *==* relational-expression
+    equality-expression *!=* relational-expression
+_</pre>
