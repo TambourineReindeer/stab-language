@@ -128,7 +128,26 @@ A shift expression is used to shift the bits of an integral type.
 <pre>_
 shift-expression:
     additive-expression
-    shift-expression << additive-expression
-    shift-expression >> additive-expression
-    shift-expression >>> additive-expression
+    shift-expression *<<* additive-expression
+    shift-expression *>>* additive-expression
+    shift-expression *>>>* additive-expression
+_</pre>
+
+== Additive expressions ==
+An additive expression adds or subtracts numeric types or delegate types. The addition is also used to build strings.
+<pre>_
+additive-expression:
+    multiplicative-expression
+    additive-expression *+* multiplicative-expression
+    additive-expression *-* multiplicative-expression
+_</pre>
+
+== Multiplicative expressions ==
+A multiplicative expression multiplies or divides numeric types.
+<pre>_
+multiplicative-expression:
+    unary-expression
+    multiplicative-expression *`*`* unary-expression
+    multiplicative-expression */* unary-expression
+    multiplicative-expression *%* unary-expression
 _</pre>
