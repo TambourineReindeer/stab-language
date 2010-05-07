@@ -7,11 +7,11 @@ The grammar of expressions is specified by the following production:
 expression:
     lambda-expression
     conditional-expression
-    query-expression
     assignment-expression
+    query-expression
 _</pre>
 
-== Lambda expression ==
+== Lambda expressions ==
 A lambda expression defines is a concise syntax to define delegates, simple interfaces or expression trees.
 <pre>_
 lambda-expression:
@@ -32,4 +32,36 @@ _</pre>
 <pre>_
 explicit-lambda-parameter:
     type identifier
+_</pre>
+
+== Conditional expressions ==
+A conditional expression evaluates an expression based on the value of a boolean expression.
+<pre>_
+conditional-expression:
+    null-coalescing-expression
+    null-coalescing-expression *?* expression *:* expression
+_</pre>
+
+== Null coalescing expressions ==
+A null coalescing expression returns the evaluation of a first expression if non-null, otherwise the evaluation of a second expression.
+<pre>_
+null-coalescing-expression:
+    conditional-or-expression
+    conditional-or-expression *??* null-coalescing-expression
+_</pre>
+
+== Conditional or expressions ==
+A conditional or expression return the evaluation of a first boolean expression if true, otherwise the evaluation of a second expression.
+<pre>_
+conditional-or-expression:
+    conditional-and-expression
+    conditional-and-expression *||* conditional-or-expression
+_</pre>
+
+== Conditional and expressions ==
+A conditional and expression return the evaluation of a first boolean expression if false, otherwise the evaluation of a second expression.
+<pre>_
+conditional-and-expression:
+    inclusive-or-expression
+    inclusive-or-expression *&&* conditional-and-expression
 _</pre>
