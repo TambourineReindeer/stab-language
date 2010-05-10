@@ -237,7 +237,8 @@ using-statement:
     *using (* local-declaration-statement *)* embedded-statement
     *using (* expression *)* embedded-statement
 _</pre>
-The compiler use the {{{stab.lang.Dispose}}} annotation to determine which method must be called to dispose the object. The compiler is shipped with a library that adds this annotation to {{{java.io.Closeable}}} (see [StabCompiler#annotatedlibs]). 
+The compiler use the {{{stab.lang.Dispose}}} annotation to determine which method must be called to dispose the object. The compiler is shipped with a library that adds this annotation to {{{java.io.Closeable}}} (see [StabCompiler#annotatedlibs]).
+
 The code sample:
 {{{
 int c;
