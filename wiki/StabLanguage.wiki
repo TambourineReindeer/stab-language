@@ -1,4 +1,5 @@
 #summary Table of contents.
+#labels Featured
 
 = Tools =
   # [StabCompiler Stab Compiler]
