@@ -180,7 +180,7 @@ A primary expression is the building block or more complex expressions.
 primary-expression:
     no-array-creation-expression
     *new* array-dimensions array-initializer
-    *new* type array-sizes,,opt,, array-dimensions array-initializer,,opt,,
+    *new* type array-sizes array-dimensions,,opt,, array-initializer,,opt,,
 _</pre>
 <pre>_
 array-dimensions:
