@@ -274,6 +274,19 @@ argument-list:
     argument-list *,* expression
 _</pre>
 
+=== Literals ===
+Literals are used to represent values directly.
+<pre>_
+literal:
+     *true*
+     *false*
+     *null*
+     integer-literal
+     real-literal
+     character-literal
+     string-literal
+_</pre>
+
 === Anonymous object creation ===
 Anonymous objects are simple objects specified and created directly inside a method.
 <pre>_
@@ -326,18 +339,6 @@ class C {
 }}}
 where {{{C}}} is a inaccessible generated name.
 {{{equals}}} and {{{hashCode}}} are overriden in order to be able to compare anonymous object instances.
-=== Literals ===
-Literals are used to represent values directly.
-<pre>_
-literal:
-     *true*
-     *false*
-     *null*
-     integer-literal
-     real-literal
-     character-literal
-     string-literal
-_</pre>
 
 === {{{sizeof}}} expressions ===
 A {{{sizeof}}} expression computes the number of elements of an array.
