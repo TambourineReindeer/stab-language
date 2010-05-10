@@ -237,7 +237,24 @@ using-statement:
     *using (* local-declaration-statement *)* embedded-statement
     *using (* expression *)* embedded-statement
 _</pre>
-
+The compiler use the {{{stab.lang.Dispose}}} annotation to determine which method must be called to dispose the object. The compiler is shipped with a library that adds this annotation to {{{java.io.Close}}} (see [StabCompiler#annotatedlibs]). 
+The code sample:
+{{{
+int c;
+using (var reader = new FileReader("file.txt")) {
+    c = reader.read();
+}
+}}}
+is equivalent to:
+{{{
+int c;
+var reader = new FileReader("file.txt");
+try {
+    c = reader.read();
+} finally {
+    if (reader != null) reader.close();
+}
+}}}
 == {{{yield}}} statements ==
 A {{{yield return}}} statement sets the value of an iteration inside an iterator block. A {{{yield break}}} statement exits the iterator block.
 <pre>_
