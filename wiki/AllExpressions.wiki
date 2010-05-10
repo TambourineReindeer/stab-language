@@ -337,8 +337,18 @@ class C {
     }
 }
 }}}
-where {{{C}}} is a inaccessible generated name.
+where {{{C}}} is an inaccessible generated name.
 {{{equals}}} and {{{hashCode}}} are overriden in order to be able to compare anonymous object instances.
+
+=== {{{typeof}}} expressions ===
+A {{{typeof}}} expression retrieves the runtime class of the evaluation of an expression.
+{{{
+var c = typeof(java.lang.String);
+}}}
+is equivalent to the Java code:
+{{{
+Class<String> c = String.class;
+}}}
 
 === {{{sizeof}}} expressions ===
 A {{{sizeof}}} expression computes the number of elements of an array.
@@ -347,3 +357,7 @@ In the example
 var size = sizeof(new int[3]);
 }}}
 the value of {{{size}}} is 3.
+It is equivalent to the Java code:
+{{{
+int size = (new int[3]).length;
+}}}
