@@ -278,9 +278,9 @@ _</pre>
 Literals are used to represent values directly.
 <pre>_
 literal:
-     *true*
-     *false*
-     *null*
+     *true* 
+     *false* 
+     *null* 
      integer-literal
      real-literal
      character-literal
