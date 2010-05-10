@@ -261,11 +261,6 @@ expression-list:
     expression-list *,* expression
 _</pre>
 <pre>_
-anonymous-object-initializer:
-    *{* member-declarator-list,,opt,, *}* 
-    *{* member-declarator-list *,*,,opt,, *}*
-_</pre>
-<pre>_
 member-declarator-list:
     member-declarator
     member-declarator-list *,* member-declarator
@@ -288,6 +283,60 @@ _</pre>
 argument-list:
     expression
     argument-list *,* expression
+_</pre>
+
+=== Anonymous object creation ===
+Anonymous objects are simple objects specified and created directly inside a method.
+<pre>_
+anonymous-object-initializer:
+    *{* member-declarator-list,,opt,, *}* 
+    *{* member-declarator-list *,*,,opt,, *}*
+_</pre>
+In the example
+{{{
+var obj1 = new { Name = "Smith", Age = 30 };
+var obj2 = new { obj1.Name, Age = 40 };
+var obj3 = new { obj2.Name, obj1.Age };
+}}}
+a single class is automatically created by the compiler because all three objects have the same properties defined in the same order:
+{{{
+using java.lang;
+class C {
+    C(String name, int age) {
+        this.Name = name;
+        this.Age = age;
+    }
+
+    public String Name { get; private set; }
+    public int Age { get; private set; }
+
+    public override boolean equals(Object obj) {
+        if (!(obj instanceof C)) return false;
+        C other = (C)obj;
+        if (!this.Name.equals(other.Name)) return false;
+        if (this.Age != other.Age) return false;
+        return true;
+    }
+    public override int hashCode() {
+        int result = this.Name.hashCode();
+        result ^= this.Age;
+        return result;
+    }
+}
+}}}
+where {{{C}}} is a inaccessible generated name.
+{{{equals}}} and {{{hashCode}}} are overriden in order to be able to compare anonymous object instances.
+=== Literals ===
+Literals are used to represent values directly.
+<pre>_
+literal:
+     *true*
+     *false*
+     *null*
+     integer-literal
+     real-literal
+     character-literal
+     string-literal
 _</pre>
 
 === {{{sizeof}}} expressions ===
