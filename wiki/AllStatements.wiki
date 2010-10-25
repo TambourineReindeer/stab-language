@@ -224,7 +224,7 @@ general-catch-clause:
 _</pre>
 
 == {{{synchronized}}} statements ==
-The {{{synchronized}}}} statement obtains a mutual-exclusion lock, executes a statement and release the lock.
+The {{{synchronized}}} statement obtains a mutual-exclusion lock, executes a statement and release the lock.
 <pre>_
 synchronized-statement:
     *synchronized (* expression *)* embedded-statement
@@ -257,9 +257,36 @@ try {
 }
 }}}
 == {{{yield}}} statements ==
-A {{{yield return}}} statement sets the value of an iteration inside an iterator block. A {{{yield break}}} statement exits the iterator block.
+A {{{yield return}}} statement sets the value of an iteration inside an iterator block. A {{{yield break}}} statement exits the iterator block. Both {{{java.lang.Iterable<T>}}} and {{{java.util.Iterator<T>}}} can be returned by an iterator block.
 <pre>_
 yield-statement:
     *yield return* expression *;* 
     *yield break ;*
 _</pre>
+
+For example to declare a method which returns the elements of a list of strings in reverse order in an Iterable, just write:
+{{{
+public Iterable<String> reverse(List<String> list) {
+    for (int i = list.size() - 1; i >= 0; --i) {
+        yield return list.get(i);
+    }
+}
+}}}
+
+Support of primitive type iterators are supported by using {{{stab.lang.IntIterable}}}, {{{stab.lang.DoubleIterable}}}, etc...
+
+This method provides an iterator over a range of integer values without involving any boxing/unboxing:
+{{{
+    IntIterable range(int start, int count) {
+        while (count-- > 0) {
+            yield return start++;
+        }
+    }
+}}}
+
+It can then be used as the iterator of a [AllStatements#_{{{foreach}}}_statements_ foreach] statement:
+{{{
+    foreach (var i in range(0, 10) {
+        System.out.println("i = " + i);
+    }
+}}}
