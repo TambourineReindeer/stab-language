@@ -284,7 +284,7 @@ This method provides an iterator over a range of integer values without involvin
     }
 }}}
 
-It can then be used as the iterator of a [AllStatements#_{{{foreach}}}_statements_ foreach] statement:
+It can then be used as the iterator of a {{{foreach}}} statement:
 {{{
     foreach (var i in range(0, 10) {
         System.out.println("i = " + i);
