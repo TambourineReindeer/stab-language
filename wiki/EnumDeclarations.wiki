@@ -39,5 +39,5 @@ enum-constant-declarations:
     enum-constant-declarations *,* enum-constant-declaration
     
 enum-constant-declaration:
-    annotations,,opt,, identifier argument-list,,opt,, class-body,,opt,,
+    annotations,,opt,, identifier argument-list,,opt,, 
 </pre></em>
