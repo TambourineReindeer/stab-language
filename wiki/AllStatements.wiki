@@ -126,6 +126,90 @@ switch-label:
     *default :*
 _</pre>
 
+The following code:
+{{{
+void m(String s) {
+    switch (s) {
+    case "A":
+    case "B":
+        System.out.println("A or B");
+        break;
+    case "C":
+        System.out.println("C");
+        break;
+    }
+}
+}}}
+is equivalent to:
+{{{
+void m(String s) {
+    var tmp = s;
+    if (tmp.equals("A") || tmp.equals("B")) {
+        System.out.println("A or B");
+    } else if (tmp.equals("C")) {
+        System.out.println("C");
+    }
+}
+}}}
+
+When the number of case is greater or equal to 7:
+{{{
+void m(String s) {
+    switch (s) {
+    case "A":
+    case "B":
+        System.out.println("A or B");
+        break;
+    case "C":
+        System.out.println("C");
+        break;
+    case "D":
+    case "E":
+    case "F":
+        System.out.println("D or E or F");
+        break;
+    case "G":
+        System.out.println("G");
+        break;
+    }
+}
+}}}
+the code is equivalent to:
+{{{
+private static HashMap<String, Integer> switchCases;
+void m(String s) {
+    var map = switchCases;
+    if (map == null) {
+        map = new HashMap<String, Integer>();
+        map["A"] = Integer.valueOf(0);
+        map["B"] = Integer.valueOf(1);
+        map["C"] = Integer.valueOf(2);
+        map["D"] = Integer.valueOf(3);
+        map["E"] = Integer.valueOf(4);
+        map["F"] = Integer.valueOf(5);
+        map["G"] = Integer.valueOf(6);
+        switchCases = map;
+    }
+    switch (map[s].intValue()) {
+    case 0:
+    case 1:
+        System.out.println("A or B");
+        break;
+    case 2:
+        System.out.println("C");
+        break;
+    case 3:
+    case 4:
+    case 5:
+        System.out.println("D or E or F");
+        break;
+    case 6:
+        System.out.println("G");
+        break;
+    }
+}
+}}}
+
 == {{{while}}} statements ==
 The {{{while}}} statement executes repeatedly a statement based on the evaluation of a boolean expression.
 <pre>_
