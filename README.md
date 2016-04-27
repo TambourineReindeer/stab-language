@@ -19,7 +19,7 @@ A beta version is available for download.
 
 # Features
 
-This section presents an overview of the features found in the Stab language. Additional informations can be found here: StabLanguage.
+This section presents an overview of the features found in the Stab language. Additional informations can be found here: [StabLanguage](https://github.com/TambourineReindeer/stab-language/wiki/StabLanguage).
 
 ## JVM compatibility
 
@@ -30,7 +30,8 @@ Stab has almost all the features that can be found in Java:
 * Exceptions handling with `try`/`catch`/`finally` and `throw` 
 * `synchronized` blocks and methods 
 * Compile-time generic programming including constraints and wildcards 
-* Annotations Stab supports nested classes but not inner classes. To access a non-static member of an outer class, an explicit reference must be used.
+* Annotations 
+* Stab supports nested classes but not inner classes. To access a non-static member of an outer class, an explicit reference must be used.
 
 ## Implicitly typed variables
 
