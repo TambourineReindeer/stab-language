@@ -61,7 +61,7 @@ package stab.tools.compiler.test {
 		
 		[Test]
 		public void staticThisAccess() {
-			doTest("StaticThisAccess", new String[]{ "StaticThisAccess.stab (5, 9) error 262: Keyword 'this' is not valid in a static context" },
+			doTest("StaticThisAccess", new String[]{ "StaticThisAccess.stab (5, 9) error 262: Keyword 'this' is not valid when explicitly invoking a constructor" },
 				new String[] {});
 		}
 		
@@ -226,14 +226,14 @@ package stab.tools.compiler.test {
 		[Test]
 		public void thisAccessInInitializer() {
 			doTest("ThisAccessInInitializer", new String[] {
-				"ThisAccessInInitializer.stab (6, 16) error 262: Keyword 'this' is not valid in a static context"},
+				"ThisAccessInInitializer.stab (6, 16) error 262: Keyword 'this' is not valid when explicitly invoking a constructor"},
 				new String[] {});
 		}
 		
 		[Test]
 		public void superAccessInInitializer() {
 			doTest("SuperAccessInInitializer", new String[] {
-				"SuperAccessInInitializer.stab (6, 22) error 261: Keyword 'super' is not valid in a static context"},
+				"SuperAccessInInitializer.stab (6, 22) error 261: Keyword 'super' is not valid when explicitly invoking a constructor"},
 				new String[] {});
 		}
 		
