@@ -19,15 +19,16 @@ A beta version is available for download.
 
 # Features
 
-This section presents an overview of the features found in the Stab language. Additional informations can be found here: [StabLanguage](https://github.com/TambourineReindeer/stab-language/wiki/StabLanguage).
+This section presents an overview of the features found in the Stab language. Additional information can be found here: [StabLanguage](https://github.com/TambourineReindeer/stab-language/wiki/StabLanguage).
 
 ## JVM compatibility
 
 Stab has almost all the features that can be found in Java: 
 * The same primitive types and operators with automatic boxing/unboxing 
 * Arrays, classes, interfaces, enums, constructors, fields and methods 
-* Methods with variable number of arguments * C-like `if`/`else`, `for`, `while`, `do`, `switch` statements 
-* Exceptions handling with `try`/`catch`/`finally` and `throw` 
+* Methods with variable number of arguments 
+* C-like `if`/`else`, `for`, `while`, `do`, `switch` statements 
+* Exception handling with `try`/`catch`/`finally` and `throw` 
 * `synchronized` blocks and methods 
 * Compile-time generic programming including constraints and wildcards 
 * Annotations 
@@ -45,7 +46,7 @@ int var = 0; // 'var' is a contextual keyword. It can be used as an identifier
 
 ## Delegates
 
-To provide a partial replacement of anonymous classes the language has delegates. Delegates can be used to store and combine pairs of objects and methods for a later invocation. For example: 
+To provide a partial replacement of anonymous classes, the language has delegates. Delegates can be used to store and combine pairs of objects and methods for a later invocation. For example: 
 
 ```
 using java.lang; 
@@ -116,7 +117,7 @@ Note: The interface `stab.lang.IntIterable` (a sub-interface of `java.lang.Itera
 
 ## Extension methods
 
-Extensions method are static methods called using the instance method syntax. For example a `where` method to filter the contents of a `java.lang.Iterable<T>` can be implemented the following way: 
+Extension methods are static methods called using the instance method syntax. For example a `where` method to filter the contents of a `java.lang.Iterable<T>` can be implemented the following way: 
 
 ```
 using java.lang; 
@@ -174,7 +175,7 @@ class C {
 }
 ```
 
-The compiler generates methods following the Java beans convention for properties, and a pair of `getItem()` / `setItem()` methods for indexers. Theses methods are decorated with annotations to allow the compiler to detect properties and indexers in compiled code. The compiler also use a mecanism to add annotations on external libraries. A library is provided to annotate some classes of the Java platform. For example, `java.lang.String.charAt()` and `java.util.Map.put()` are specified as indexers.
+The compiler generates methods following the Java beans convention for properties, and a pair of `getItem()` / `setItem()` methods for indexers. These methods are decorated with annotations to allow the compiler to detect properties and indexers in compiled code. The compiler also use a mechanism to add annotations on external libraries. A library is provided to annotate some classes of the Java platform. For example, `java.lang.String.charAt()` and `java.util.Map.put()` are specified as indexers.
 
 ## Anonymous objects
 
@@ -219,9 +220,9 @@ public class Test {
 	} 
 } 
 ```
-The package `stab.query` provides all the extension methods required to use LINQ on `java.lang.Iterable<T>` but queries can be used virtually on everything if the necessary methods are provided (what is called _Query expression pattern_ in the C# specification).
+The package `stab.query` provides all the extension methods required to use LINQ on `java.lang.Iterable<T>` but queries can be used on virtually everything if the necessary methods are provided (what is called _Query expression pattern_ in the C# specification).
 
-## Automatic resources management
+## Automatic resource management
 
 The `using` statement can be used to automatically dispose resources: 
 ```
@@ -252,11 +253,12 @@ Stab has a preprocessor similar to the preprocessor of the C# language:
 * Regions can be specified with `#region` and `#endregion` 
 * Errors and warnings can be triggered by `#error` and `#warning` 
 * Warnings can be disabled with `#pragma warning` 
-* Current line and filename can be overriden using `#line` Symbols can be defined externally using an option of the command line compiler.
+* Current line and filename can be overriden using `#line` 
+* Symbols can be defined externally using an option of the command line compiler.
 
 ### Partial classes and methods
 
-Classes with the `partial` modifier can have their definition splitted in one or more files. Methods with the `partial` modifier can have an optional implementation.
+Classes with the `partial` modifier can have their definitions split into one or more files. Methods with the `partial` modifier can have an optional implementation.
 
 ### goto statement
 
@@ -301,7 +303,7 @@ When the `add` or `put` method has a single argument, a more compact form can be
 
 Identifiers can be preceded by `@` to allow keywords to be used as identifiers.
 
-### Types and packages aliasing
+### Type and package aliasing
 
 Types and packages can be renamed locally in a file in order to avoid ambiguities, or just for cosmetic reasons.
 
@@ -320,7 +322,7 @@ class C { StringList list = new StringList(); }
 
 ### Conditional annotation
 
-Calls to a method decorated with the `stab.lang.Conditional` annotation can be included or removed by the compiler from the generated bytecode depending on defined preprocessor symbols. For example simple assertions can be implemented like this:
+Calls to a method decorated with the `stab.lang.Conditional` annotation can be included or removed by the compiler from the generated bytecode depending on defined preprocessor symbols. For example, simple assertions can be implemented like this:
 ```
 using java.lang; 
 using stab.lang; 
@@ -353,4 +355,4 @@ As
 
 ### XML documentation
 
-Comments starting with `///` or `/**` are considered as XML comments and can be extracted using an option of the command line compiler.
+Comments starting with `///` or `/**` are considered XML comments and can be extracted using an option of the command line compiler.
