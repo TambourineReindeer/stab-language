@@ -1,5 +1,5 @@
 # stab-language
-Automatically exported from code.google.com/p/stab-language
+Automatically exported from https://code.google.com/p/stab-language
 
 A multi-paradigm programming language designed for the Java Virtual Machine
 
