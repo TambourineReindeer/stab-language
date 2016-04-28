@@ -303,8 +303,8 @@ package stab.tools.parser {
                     switch (advance()) {
                     case 'c':
                         return scanContextualKeyword("cending", Keyword.Ascending);
-					case 'y':
-						return scanContextualKeyword("ync", Keyword.Async);
+			        case 'y':
+				        return scanContextualKeyword("ync", Keyword.Async);
                     default:
                         return scanKeyword("", Keyword.As);
                     }
